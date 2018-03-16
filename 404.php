@@ -18,7 +18,7 @@ get_header(); ?>
 				<div class="container">
 					<h1 class="title is-1"><?php esc_html_e( '404', 'bulmascores' ); ?></h1>
 					<h2 class="subtitle">
-						<?php esc_html_e( 'Oops! That page can&rsquo;t be found. Try a search.', 'bulmascores' ); ?>
+						<?php esc_html_e( 'Oops! That page can&rsquo;t be found. Why don&rsquo;t you try to search something?', 'bulmascores' ); ?>
 					</h2>
 					
 					<div class="columns is-mobile is-centered">

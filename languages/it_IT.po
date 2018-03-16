@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bulmascores\n"
-"POT-Creation-Date: 2018-03-11 22:35+0100\n"
-"PO-Revision-Date: 2018-03-11 22:35+0100\n"
+"POT-Creation-Date: 2018-03-16 20:57+0100\n"
+"PO-Revision-Date: 2018-03-16 20:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -20,7 +20,9 @@ msgid "404"
 msgstr "404"
 
 #: 404.php:21
-msgid "Oops! That page can&rsquo;t be found. Try a search."
+msgid ""
+"Oops! That page can&rsquo;t be found. Why don&rsquo;t you try to search "
+"something?"
 msgstr ""
 "Oops! Sembra che questa pagina non esista. Perché non provi ad effettuare "
 "una ricerca?"
@@ -67,18 +69,18 @@ msgstr "Sidebar"
 msgid "Add widgets here."
 msgstr "Aggiungi dei widget."
 
+#: inc/bulma-pagination.php:30 inc/bulma-pagination.php:32
+msgid "Previous"
+msgstr "Pagina precedente"
+
+#: inc/bulma-pagination.php:37 inc/bulma-pagination.php:40
+msgid "Next"
+msgstr "Pagina successiva"
+
 #: index.php:27
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Risultati della ricerca per: %s"
-
-#: index.php:53
-msgid "Next page »"
-msgstr "Pagina successiva »"
-
-#: index.php:54
-msgid "« Previous page"
-msgstr "« Pagina precedente"
 
 #: loop-parts/content-none.php:14
 msgid "Nothing Found"
@@ -100,7 +102,7 @@ msgstr ""
 "Sembra che non siamo riusciti a trovare quello che stai cercando. Forse una "
 "ricerca può aiutare."
 
-#: loop-parts/loop-page.php:24 loop-parts/loop-single.php:40
+#: loop-parts/loop-page.php:29 loop-parts/loop-single.php:45
 msgid "Pages:"
 msgstr "Pagine:"
 
@@ -112,7 +114,7 @@ msgstr "Ultima modifica&nbsp;"
 msgid "by&nbsp;"
 msgstr "a cura di&nbsp;"
 
-#: loop-parts/loop.php:35
+#: loop-parts/loop.php:40
 msgid "Read More"
 msgstr "Continua a leggere"
 
@@ -143,6 +145,9 @@ msgstr "WhatsApp"
 #: searchform.php:15
 msgid "Search &hellip;"
 msgstr "Cerca &hellip;"
+
+#~ msgid "Next page »"
+#~ msgstr "Pagina successiva »"
 
 #~ msgid "Posted on&nbsp;"
 #~ msgstr "Pubblicato il&nbsp;"
