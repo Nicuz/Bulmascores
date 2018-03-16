@@ -19,8 +19,6 @@ function bulma_pagination() {
   	'prev_next' => false,
   	'type'  => 'array',
   	'prev_next'   => true,
-  	'prev_text'    => __( 'Previous', 'text-domain' ),
-  	'next_text'    => __( 'Next', 'text-domain'),
   ) );
 
   if ( is_array( $pages ) ) {
@@ -29,17 +27,17 @@ function bulma_pagination() {
 
 	//Disable Previous button if the current page is the first one
   	if ($paged == 1) {
-  		echo '<a class="pagination-previous" disabled>Previous</a>';
+  		echo '<a class="pagination-previous" disabled>' . esc_html__( 'Previous', 'bulmascores' ) . '</a>';
   	} else {
-  		echo '<a class="pagination-previous" href="' . get_previous_posts_page_link() . '">Previous</a>';
+  		echo '<a class="pagination-previous" href="' . get_previous_posts_page_link() . '">' . esc_html__( 'Previous', 'bulmascores' ) . '</a>';
   	}
 
 	//Disable Next button if the current page is the last one
   	if ($paged<$total_pages) {
-  		echo '<a class="pagination-next" href="' . get_next_posts_page_link() . '">Next</a>
+  		echo '<a class="pagination-next" href="' . get_next_posts_page_link() . '">' . esc_html__( 'Next', 'bulmascores' ) . '</a>
   		<ul class="pagination-list">';
   	} else {
-  		echo '<a class="pagination-next" disabled>Next</a>
+  		echo '<a class="pagination-next" disabled>' . esc_html__( 'Next', 'bulmascores' ) . '</a>
   		<ul class="pagination-list">';
   	}
 
