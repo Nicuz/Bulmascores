@@ -1,0 +1,104 @@
+/*!
+Theme Name: Bulmascores
+Theme URI:
+Author: Domenico Majorana
+Author URI:
+Description: Underscores meets Bulma
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: bulmascores
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+Bulmascores is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/* General
+-------------------------------------------------------------- */
+body {font-family: 'Roboto', sans-serif;display: flex;min-height: 100vh;flex-direction: column;}
+
+a, a:hover {color: #000;}
+a:hover {opacity: 0.7;}
+
+.navbar { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);}
+
+.custom-logo {width: 150px; height: auto;}
+.navbar-brand {margin-right: 16px}
+/*#social-icons a {color:#fff;}*/
+#social-icons a:hover {color: #000;opacity: 0.5;background:none;}
+
+#primary {flex: 1 0 auto;margin-top: 20px;}
+
+.carousel {margin-bottom: 50px;}
+.carousel .hero-body .container {max-width: 100%;height: 100px;}
+.carousel-cell {width: 66%;margin-right: 10px;border-radius: 5px;}
+
+.pagination-link.is-current {background-color: #363636;border-color: #363636;}
+
+/* Posts
+-------------------------------------------------------------- */
+.post, .sticky {margin-bottom: 30px;}
+.post-meta .tags {margin-bottom: 2px;}
+
+.read-more {margin-top: 10px;margin-bottom: 10px;}
+
+.tags a:hover {text-decoration: none;}
+
+/* Comments
+-------------------------------------------------------------- */
+#comments .comment-list {margin-left: 0;}
+#comments .comment {list-style-type: none;padding: 10px;border-radius: 3px;border: 1px solid #ddd;margin-bottom: 10px;}
+#comments .comment-author {display:flex;align-items:center;}
+#comments .avatar, #comments .fn {margin-right: 5px;}
+#comments .bypostauthor {background-color: #f5f5f5;padding: 10px;padding-bottom: 0;}
+#comments .avatar {border-radius: 3px;}
+#comments .reply {margin-top: 10px;}
+#comments textarea {width: 100%;padding: 10px;border-color: #dbdbdb;}
+#comments label {display: inline-block;width: 70px;}
+
+/* Sidebar widget
+-------------------------------------------------------------- */
+.widget-area .widget {margin-bottom: 30px;}
+
+/* Footer
+-------------------------------------------------------------- */
+.footer {margin-top: 20px;padding: 20px;}
+
+/* WordPress Core
+-------------------------------------------------------------- */
+.alignnone {margin: 5px 20px 20px 0;}
+.aligncenter,
+div.aligncenter {display: block;margin: 5px auto 5px auto;}
+.alignright {float:right;margin: 5px 0 20px 20px;}
+.alignleft {float: left;margin: 5px 20px 20px 0;}
+a img.alignright {float: right;margin: 5px 0 20px 20px;}
+a img.alignnone {margin: 5px 20px 20px 0;}
+a img.alignleft {float: left;margin: 5px 20px 20px 0;}
+a img.aligncenter {display: block;margin-left: auto;margin-right: auto;}
+
+.wp-caption {background: #fff;border: 1px solid #f0f0f0;max-width: 96%; /* Image does not overflow the content area */padding: 5px 3px 10px;text-align: center;}
+.wp-caption.alignnone {margin: 5px 20px 20px 0;}
+.wp-caption.alignleft {margin: 5px 20px 20px 0;}
+.wp-caption.alignright {margin: 5px 0 20px 20px;}
+.wp-caption img {border: 0 none;height: auto;margin: 0;max-width: 98.5%;padding: 0;width: auto;}
+.wp-caption p.wp-caption-text {font-size: 11px;line-height: 17px;margin: 0;padding: 0 4px 5px;}
+
+/* Text meant only for screen readers.
+-------------------------------------------------------------- */
+.screen-reader-text {border: 0;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute !important;width: 1px;word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */}
+.screen-reader-text:focus {background-color: #eee;clip: auto !important;clip-path: none;color: #444;display: block;font-size: 1em;height: auto;left: 5px;line-height: normal;padding: 15px 23px 14px;text-decoration: none;top: 5px;width: auto;z-index: 100000;/* Above WP toolbar. */}
+
+/* Galleries
+-------------------------------------------------------------- */
+.gallery {margin-bottom: 1.5em;}
+.gallery-item {display: inline-block;text-align: center;vertical-align: top;width: 100%;}
+.gallery-columns-2 .gallery-item {max-width: 50%;}
+.gallery-columns-3 .gallery-item {max-width: 33.33%;}
+.gallery-columns-4 .gallery-item {max-width: 25%;}
+.gallery-columns-5 .gallery-item {max-width: 20%;}
+.gallery-columns-6 .gallery-item {max-width: 16.66%;}
+.gallery-columns-7 .gallery-item {max-width: 14.28%;}
+.gallery-columns-8 .gallery-item {max-width: 12.5%;}
+.gallery-columns-9 .gallery-item {max-width: 11.11%;}
+.gallery-caption {display: block;}

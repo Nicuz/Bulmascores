@@ -1,0 +1,151 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bulmascores\n"
+"POT-Creation-Date: 2018-03-11 22:35+0100\n"
+"PO-Revision-Date: 2018-03-11 22:35+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: esc_html_e;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:19
+msgid "404"
+msgstr "404"
+
+#: 404.php:21
+msgid "Oops! That page can&rsquo;t be found. Try a search."
+msgstr ""
+"Oops! Sembra che questa pagina non esista. Perché non provi ad effettuare "
+"una ricerca?"
+
+#: comments.php:27
+msgid "Reply"
+msgstr "Rispondi"
+
+#: comments.php:34
+msgid "Edit"
+msgstr "Modifica"
+
+#: comments.php:53
+msgid "no comments"
+msgstr "nessun commento"
+
+#: comments.php:54
+msgid "one comment"
+msgstr "un commento"
+
+#: comments.php:55
+#, php-format
+msgid "% comments"
+msgstr "% commenti"
+
+#: comments.php:74
+msgid "Comments are closed."
+msgstr "Commenti disabilitati."
+
+#: footer.php:18
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s realizzato da %2$s."
+
+#: functions.php:46
+msgid "Primary"
+msgstr "Primario"
+
+#: functions.php:112
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: functions.php:114
+msgid "Add widgets here."
+msgstr "Aggiungi dei widget."
+
+#: index.php:27
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Risultati della ricerca per: %s"
+
+#: index.php:53
+msgid "Next page »"
+msgstr "Pagina successiva »"
+
+#: index.php:54
+msgid "« Previous page"
+msgstr "« Pagina precedente"
+
+#: loop-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Non è stato trovato nulla"
+
+#: loop-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Nessun articolo corrisponde ai criteri di ricerca. Prova di nuovo usando "
+"parole chiave diverse."
+
+#: loop-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Sembra che non siamo riusciti a trovare quello che stai cercando. Forse una "
+"ricerca può aiutare."
+
+#: loop-parts/loop-page.php:24 loop-parts/loop-single.php:40
+msgid "Pages:"
+msgstr "Pagine:"
+
+#: loop-parts/loop-single.php:24 loop-parts/loop.php:20
+msgid "Last modified&nbsp;"
+msgstr "Ultima modifica&nbsp;"
+
+#: loop-parts/loop-single.php:25 loop-parts/loop.php:21
+msgid "by&nbsp;"
+msgstr "a cura di&nbsp;"
+
+#: loop-parts/loop.php:35
+msgid "Read More"
+msgstr "Continua a leggere"
+
+#: page-parts/content-frontpage.php:81
+msgid "View all posts"
+msgstr "Guarda tutti gli articoli"
+
+#: page-parts/content-social.php:4
+msgid "Share"
+msgstr "Condividi"
+
+#: page-parts/content-social.php:9
+msgid "Facebook"
+msgstr "Facebook"
+
+#: page-parts/content-social.php:15
+msgid "Twitter"
+msgstr "Twitter"
+
+#: page-parts/content-social.php:21
+msgid "Telegram"
+msgstr "Telegram"
+
+#: page-parts/content-social.php:27
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: searchform.php:15
+msgid "Search &hellip;"
+msgstr "Cerca &hellip;"
+
+#~ msgid "Posted on&nbsp;"
+#~ msgstr "Pubblicato il&nbsp;"
+
+#~ msgid "Proudly powered by %s"
+#~ msgstr "Realizzato con %s"
