@@ -93,6 +93,15 @@ add_action( 'after_setup_theme', 'bulmascores_setup' );
 // Remove WordPress version number
 remove_action( 'wp_head', 'wp_generator' );
 
+// Add navbar-item class to the_custom_logo()
+add_filter( 'get_custom_logo', 'custom_logo_class' );
+function custom_logo_class( $logo ) {
+
+    $logo = str_replace( 'custom-logo-link', 'custom-logo-link navbar-item', $logo );
+
+    return $logo;
+}
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  * Priority 0 to make it available to lower priority callbacks.
