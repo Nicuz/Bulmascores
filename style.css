@@ -25,7 +25,7 @@ a:hover {opacity: 0.7;}
 
 .custom-logo {width: 150px; height: auto;}
 .navbar-brand {margin-right: 16px}
-/*#social-icons a {color:#fff;}*/
+.navbar-item img { max-height: none;}
 #social-icons a:hover {color: #000;opacity: 0.5;background:none;}
 
 #primary {flex: 1 0 auto;margin-top: 20px;}
