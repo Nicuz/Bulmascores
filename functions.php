@@ -134,7 +134,7 @@ function bulmascores_scripts() {
 	wp_enqueue_style( 'bulmascores-bulma-css', '//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css', array(), null );
 	wp_enqueue_style( 'bulmascores-fontawesome', '//use.fontawesome.com/releases/v5.0.8/css/all.css', array(), null );
 	wp_enqueue_style( 'bulmascores-roboto', 'fonts.googleapis.com/css?family=Roboto', array(), null );
-	wp_enqueue_style( 'bulmascores-overrides-style', get_stylesheet_uri(), array(), null );
+	wp_enqueue_style( 'bulmascores-overrides-style', get_template_directory_uri() . '/css/bulmascores.min.css', array(), null );
 	wp_enqueue_script( 'bulmascores-burger-js', get_template_directory_uri() . '/js/bulma_nav_burger.js', array(), null, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
