@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://i.imgur.com/Ec52DPw.png" style="max-width:50%;">
+  <img src="https://i.imgur.com/Ec52DPw.png" width="500" height="129">
 </p>
 
-![WordPress](https://img.shields.io/badge/WordPress-4.9.4%20tested-brightgreen.svg)
-![PHP](https://img.shields.io/badge/PHP-7.1.7%20tested-brightgreen.svg)
-![LICENSE](https://img.shields.io/badge/license-GPL-blue.svg)
+<p align="center"><img src="https://img.shields.io/badge/WordPress-4.9.4%20tested-brightgreen.svg">
+<img src="https://img.shields.io/badge/PHP-7.1.7%20tested-brightgreen.svg">
+<img src="https://img.shields.io/badge/license-GPL-blue.svg"></p>
 
 Bulmascores is a WordPress starter theme based on Underscores and Bulma Framework. It's just a personal project meant for speedup my workflow, a solid base to start with for more complex projects.
 
