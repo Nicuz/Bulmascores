@@ -25,12 +25,12 @@
 		<?php endif; ?>
 	</header>
 
-	<?php the_post_thumbnail( 'bulmascores_thumbnail', array(
-		//'class' => 'attachment-post-thumbnail my-custom-class',
-		'alt' => get_the_title(),
-		'title' => get_the_title(),
-		)
-	); ?>
+	<?php
+		the_post_thumbnail( 'bulmascores_thumbnail', array(
+			//'class' => 'attachment-post-thumbnail my-custom-class',
+			'alt' => get_the_title(),
+			'title' => get_the_title(),
+		) ); ?>
 
 	<div class="post-content">
 		<?php the_excerpt(); ?>
