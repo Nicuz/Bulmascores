@@ -1,5 +1,11 @@
 $font_stack: 'Roboto', sans-serif
-$primary_color: #363636
+
+// Colors
+$primary: #363636
+$link: #000
+$comment_border: #ddd
+$comment_author_bg: #f5f5f5
+$textarea_border: #dbdbdb
 
 body
   font-family: $font_stack
@@ -8,7 +14,7 @@ body
   flex-direction: column
 
 a, a:hover
-  color: #000
+  color: $link
 
 a:hover
   opacity: 0.7
@@ -18,5 +24,5 @@ a:hover
   margin-top: 20px
 
 .pagination-link.is-current
-  background-color: $primary_color
-  border-color: $primary_color
+  background-color: $primary
+  border-color: $primary
