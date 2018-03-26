@@ -12,8 +12,7 @@ Bulmascores is a WordPress starter theme based on Underscores and Bulma Framewor
   <img src="https://i.imgur.com/RuyQ12i.png" style="max-width:100%;">
 </p>
 
-Features
----------------
+## Features
 
 * WordPress coding standards
 * Translations friendly
@@ -21,3 +20,18 @@ Features
 * [FontAwesome](https://fontawesome.com) 5.0.8
 * [Flickity carousel](https://flickity.metafizzy.co)
 * SASS
+
+## Installation
+#### 1. Using Git Clone
+* cd into ```wp-content/themes```
+* Launch ```git clone https://github.com/Nicuz/Bulmascores.git```
+
+#### 2. Using .zip
+* Click the ```Clone or download``` button on this repo and then ```Download ZIP```
+* Upload Bulmascores as you would normally do from the WordPress Dashboard under ```Appearance>Themes```
+
+## Credits
+* Underscores: [http://underscores.me](http://underscores.me)
+* Bulma: [https://bulma.io](https://bulma.io)
+* FontAwesome: [https://fontawesome.com](https://fontawesome.com)
+* Flickity: [https://flickity.metafizzy.co](https://flickity.metafizzy.co)
