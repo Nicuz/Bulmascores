@@ -1,0 +1,19 @@
+/* main: ../bulmascores.sass */
+
+// Media queries breakpoints
+$mobile: 768px
+$tablet: 769px
+$desktop: 1024px
+$widescreen: 1216px
+$fullhd: 1408px
+
+// Smartphone and tablet
+@media screen and (max-width: $desktop - 1)
+  .carousel-cell .hero-body
+    flex-grow: 0
+    margin: auto
+
+  .columns
+    margin-left: 0
+    margin-right: 0
+    margin-top: 0
