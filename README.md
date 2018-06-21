@@ -2,7 +2,7 @@
   <img src="https://i.imgur.com/Ec52DPw.png" width="500" height="129">
 </p>
 
-<p align="center"><img src="https://img.shields.io/badge/WordPress-4.9.4%20tested-brightgreen.svg">
+<p align="center"><img src="https://img.shields.io/badge/WordPress-4.9.6%20tested-brightgreen.svg">
 <img src="https://img.shields.io/badge/PHP-7.1.7%20tested-brightgreen.svg">
 <img src="https://img.shields.io/badge/license-GPL-blue.svg"></p>
 
