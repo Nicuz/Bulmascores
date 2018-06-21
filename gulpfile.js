@@ -5,14 +5,27 @@ var autoprefixer = require( 'gulp-autoprefixer' );
 var sourcemaps = require( 'gulp-sourcemaps' );
 var rename = require( 'gulp-rename' );
 var browsersync = require( 'browser-sync' ).create();
+var wppot = require('gulp-wp-pot');
 
 // VARIABLES
-var localDomain = 'http://nicuz.local';
+const WORDPRESS = {
+  localDomain: 'http://nicuz.local',
+  textdomain: 'bulmascores',
+  admin: 'Domenico Majorana <nico.majorana@gmail.com>',
+  team: 'Domenico Majorana <nico.majorana@gmail.com>'
+}
 
 const PATHS = {
   styles: {
     src: './assets/sass/**/*.sass',
-    dest: './assets/css/'
+    dest: './assets/css/',
+    min: './assets/css/*.min.css'
+  },
+  php: {
+    src: './**/*.php'
+  },
+  scripts: {
+    src: './assets/js/*.js'
   }
 };
 
@@ -32,31 +45,44 @@ const BROWSERS = [
 
 //SASS TO MIN.CSS
 gulp.task('sass', function () {
-  return gulp.src(PATHS.styles.src)
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(sourcemaps.init())
-    .pipe(autoprefixer({browsers: BROWSERS}))
-    .pipe(rename({suffix: '.min' }))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(PATHS.styles.dest))
+  return gulp.src( PATHS.styles.src )
+    .pipe( sass( { outputStyle: 'compressed' } ).on( 'error', sass.logError ) )
+    .pipe( sourcemaps.init())
+    .pipe( autoprefixer( { browsers: BROWSERS } ) )
+    .pipe( rename({suffix: '.min' }))
+    .pipe( sourcemaps.write( './' ))
+    .pipe( gulp.dest( PATHS.styles.dest ))
 });
 
 //BROWSER LIVE PREVIEW
-gulp.task('browsersync', function() {
+gulp.task( 'browsersync', function() {
     var files = [
-      './assets/css/*.min.css',
-      './assets/js/*.js',
-      './**/*.php'
+      PATHS.styles.min,
+      PATHS.scripts.src,
+      PATHS.php.src
     ];
 
-    browsersync.init(files, {
-        proxy: localDomain,
+    browsersync.init( files, {
+        proxy: WORDPRESS.localDomain,
         open: false
     });
 });
 
+//GENERATE TRANSLATION FILE
+gulp.task( 'wppot', function() {
+	return gulp.src( PATHS.php.src )
+		.pipe( wppot( {
+				domain: WORDPRESS.textdomain,
+				lastTranslator: WORDPRESS.admin,
+				team: WORDPRESS.team
+			})
+		)
+		.pipe( gulp.dest( './languages/' + WORDPRESS.textdomain + '.pot' ) )
+});
+
 function watchFiles() {
-  gulp.watch(PATHS.styles.src, gulp.parallel('sass'));
+  gulp.watch( PATHS.styles.src, gulp.parallel( 'sass' )) ;
+  gulp.watch( PATHS.php.src, gulp.parallel( 'wppot' ) );
 }
 
-gulp.task('default', gulp.parallel('sass', 'browsersync', watchFiles));
+gulp.task( 'default', gulp.parallel( 'sass', 'browsersync', 'wppot', watchFiles ) );
