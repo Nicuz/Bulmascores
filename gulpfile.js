@@ -8,8 +8,14 @@ var browsersync = require( 'browser-sync' ).create();
 
 // VARIABLES
 var localDomain = 'http://nicuz.local';
-var sassFiles =  './assets/sass/**/*.sass';
-var cssFiles = './assets/css/';
+
+const PATHS = {
+  styles: {
+    src: './assets/sass/**/*.sass',
+    dest: './assets/css/'
+  }
+};
+
 const BROWSERS = [
     'last 2 version',
     '> 1%',
@@ -25,14 +31,14 @@ const BROWSERS = [
 ];
 
 //SASS TO MIN.CSS
-gulp.task('sass', function (done) {
-  return gulp.src(sassFiles)
+gulp.task('sass', function () {
+  return gulp.src(PATHS.styles.src)
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(sourcemaps.init())
     .pipe(autoprefixer({browsers: BROWSERS}))
     .pipe(rename({suffix: '.min' }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(cssFiles))
+    .pipe(gulp.dest(PATHS.styles.dest))
 });
 
 //BROWSER LIVE PREVIEW
@@ -49,6 +55,8 @@ gulp.task('browsersync', function() {
     });
 });
 
-gulp.task('default', ['sass', 'browsersync'], function(){
-  gulp.watch(sassFiles, ['sass']);
-});
+function watchFiles() {
+  gulp.watch(PATHS.styles.src, gulp.parallel('sass'));
+}
+
+gulp.task('default', gulp.parallel('sass', 'browsersync', watchFiles));
