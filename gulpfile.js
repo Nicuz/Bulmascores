@@ -85,4 +85,4 @@ function watchFiles() {
   gulp.watch( PATHS.php.src, gulp.parallel( 'wppot' ) );
 }
 
-gulp.task( 'default', gulp.parallel( 'sass', 'browsersync', 'wppot', watchFiles ) );
+gulp.task( 'default', gulp.parallel( 'sass', 'browsersync', watchFiles ) );
