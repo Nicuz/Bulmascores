@@ -50,7 +50,7 @@
 
 		<footer>
 			<?php bulmascores_post_meta( 'tags' ); ?>
-			<?php get_template_part( 'page-parts/content', 'social' ); ?>
+			<?php get_template_part( 'template-parts/contents/content', 'social' ); ?>
 		</footer>
 
 	</article><!-- #post-<?php the_ID(); ?> -->

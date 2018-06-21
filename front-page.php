@@ -16,7 +16,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 
-	<?php get_template_part( 'page-parts/content', 'frontpage' ); ?>
+	<?php get_template_part( 'template-parts/contents/content', 'frontpage' ); ?>
 
 </div><!-- #primary -->
 

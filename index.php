@@ -46,11 +46,11 @@ get_header(); ?>
 				if ( have_posts() ) :
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
-						get_template_part( 'loop-parts/loop', get_post_format() );
+						get_template_part( 'template-parts/loops/loop', get_post_format() );
 					endwhile;
 
 				else :
-					get_template_part( 'loop-parts/content', 'none' );
+					get_template_part( 'template-parts/contents/content', 'none' );
 
 				endif;
 				?>

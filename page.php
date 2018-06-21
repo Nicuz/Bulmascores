@@ -22,7 +22,7 @@ get_header(); ?>
 					<?php
 					while ( have_posts() ) : the_post();
 
-						get_template_part( 'loop-parts/loop', 'page' );
+						get_template_part( 'template-parts/loops/loop', 'page' );
 
 						// If comments are open or we have at least one comment, load up the comment template.
 						if ( comments_open() || get_comments_number() ) :
@@ -31,7 +31,7 @@ get_header(); ?>
 
 					endwhile; // End of the loop.
 					?>
-				
+
 				</div><!-- .columns is-8 -->
 			</div><!-- .columns -->
 

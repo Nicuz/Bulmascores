@@ -65,11 +65,11 @@ wp_reset_postdata(); ?>
 				while ( $bulmascores_the_query->have_posts() ) :
 					$bulmascores_the_query->the_post();
 
-					get_template_part( 'loop-parts/loop', get_post_format() );
+					get_template_part( 'template-parts/loops/loop', get_post_format() );
 				endwhile;
 
 			else :
-				get_template_part( 'loop-parts/content', 'none' );
+				get_template_part( 'template-parts/contents/content', 'none' );
 
 			endif;
 
