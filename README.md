@@ -16,10 +16,11 @@ Bulmascores is a WordPress starter theme based on Underscores and Bulma Framewor
 
 * WordPress coding standards
 * Translations friendly
-* [Bulma](https://bulma.io) 0.6.2
-* [FontAwesome](https://fontawesome.com) 5.0.8
+* [Bulma](https://bulma.io) 0.7.1
+* [FontAwesome](https://fontawesome.com) 5.0.13
 * [Flickity carousel](https://flickity.metafizzy.co)
-* SASS
+* Sass
+* [Gulp.js](https://gulpjs.com)
 
 ## Requirements
 * [WP Subtitle](https://it.wordpress.org/plugins/wp-subtitle/)
