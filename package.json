@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "bulma for Wordpress",
   "scripts": {
+    "clean:css": "rimraf ./assets/css/",
     "compile:sass": "node-sass --output-style expanded ./assets/sass/bulmascores.sass -o ./assets/css",
     "compile:postcss": "postcss -c postcss.config.js ./assets/css/*.css -r ./assets/css/",
-    "build:css": "compile:sass && compile:postcss",
-    "clean:css": "rimraf ./assets/css/*.css",
+    "compile:css": "npm-run-all clean:css compile:sass compile:postcss",
+    "build:css": "onchange \"./assets/sass/\" -- npm-run-all clean:css compile:sass compile:postcss ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [
@@ -49,7 +50,8 @@
     "pug": "^2.0.4",
     "pug-cli": "^1.0.0-alpha6",
     "rimraf": "^2.6.3",
-    "sanitize.css": "^11.0.0"
+    "sanitize.css": "^11.0.0",
+    "watch": "^1.0.2"
   },
   "dependencies": {},
   "optionalDependencies": {}

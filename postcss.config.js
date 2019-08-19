@@ -4,7 +4,7 @@ module.exports = {
       silent: true
     }),
     require("cssnano")({
-      preset: 'default',
+      autoprefixer: false
     }),
     require("postcss-import"),
     require("postcss-nested"),
