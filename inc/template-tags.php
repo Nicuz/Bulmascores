@@ -23,7 +23,8 @@ if ( ! function_exists( 'bulmascores_post_meta' ) ) :
 				if ( get_the_tags() ) {
 					$tags = get_the_tags();
 					foreach ( $tags as $tag ) {
-						echo '<a class="tag is-medium" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
+						// echo '<a class="tag is-medium" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
+						echo '<a class="tag is-dark is-small" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
 					}
 				}
 			}
