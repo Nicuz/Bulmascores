@@ -22,21 +22,21 @@
 		<?php if ('post' === get_post_type()): ?>
 			<div class="post-meta">
 				<p>
-					<?php esc_html_e('Last modified&nbsp;', 'bulmascores')?><time><?php the_modified_date('j/m/Y');?></time>
-					<?php esc_html_e('by&nbsp;', 'bulmascores') . the_author_posts_link();?>
+					<?php esc_html_e('Last modified&nbsp;', 'bulmascores')?><time><?php the_modified_date('Y/m/j');?></time>
+					<?php // esc_html_e('by&nbsp;', 'bulmascores') . the_author_posts_link();?>
 				</p>
 			</div><!-- .post-meta -->
 			<?php
 endif;?>
 
+		<?php the_post_thumbnail('bulmascores_thumbnail', array(
+		//'class' => 'attachment-post-thumbnail my-custom-class',
+		'alt'   => get_the_title(),
+		'title' => get_the_title(),
+		)
+		);?>
 		</header><!-- .post-header -->
 
-		<?php the_post_thumbnail('bulmascores_thumbnail', array(
-    //'class' => 'attachment-post-thumbnail my-custom-class',
-    'alt'   => get_the_title(),
-    'title' => get_the_title(),
-)
-);?>
 
 		<div class="content">
 			<?php
