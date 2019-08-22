@@ -3,9 +3,9 @@ module.exports = {
     require("postcss-simple-vars")({
       silent: true
     }),
-    require("cssnano")({
+    /*require("cssnano")({
       autoprefixer: false
-    }),
+    }),*/
     require("postcss-import"),
     require("postcss-nested"),
     require("postcss-for"),
