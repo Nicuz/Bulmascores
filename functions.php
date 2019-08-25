@@ -133,11 +133,11 @@ add_action( 'widgets_init', 'bulmascores_widgets_init' );
 function bulmascores_scripts() {
 	$bulmascores = '/assets/css/bulmascores.css';
 	wp_enqueue_style( 'bulmascores-bulma-css', '//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css', array(), null );
-	wp_enqueue_style( 'bulmascores-fontawesome', '//use.fontawesome.com/releases/v5.0.13/css/all.css', array(), null );
+	wp_enqueue_style( 'bulmascores-fontawesome', '//use.fontawesome.com/releases/v5.10.2/css/all.css', array(), null );
 	wp_register_style( 'bulmascores-overrides-style', 
 						get_template_directory_uri() . $bulmascores, 
 						array(), 
-						date("YmdHi",filemtime(get_stylesheet_directory().$bulmascores) ), // 更新時間を追記してキャッシュしないようにする 
+						date("YsmdHi",filemtime(get_stylesheet_directory().$bulmascores) ), // 更新時間を追記してキャッシュしないようにする 
 						'all' 
 					);
 	wp_enqueue_style( 'bulmascores-overrides-style');
