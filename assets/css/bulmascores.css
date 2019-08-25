@@ -1,4 +1,8 @@
+@charset "UTF-8";
 /* main: ../bulmascores.sass */
+body, button, input, select, textarea {
+  font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+}
 body {
   display: flex;
   min-height: 100vh;
@@ -247,4 +251,18 @@ a img.aligncenter {
 #comments label {
   display: inline-block;
   width: 70px;
+}
+.single-post-header {
+  position: relative;
+}
+.single-post-title {
+  font-size: 2.5rem;
+  color: #121212;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(248, 248, 255, 0.4);
 }

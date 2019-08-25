@@ -14,13 +14,24 @@
 	<?php bulmascores_post_meta('categories');?>
 
 	<header class="post-header">
-		<?php the_title('<h1 class="title is-1">', '</h1>');?>
-		<?php if (function_exists('the_subtitle')): ?>
-		<?php the_subtitle('<h2 class="subtitle">', '</h2>');?>
-		<?php endif;?>
+		<div class="single-post-header">
+			<?php // the_title('<h1 class="title is-1 single-post-title">', '</h1>');?>
+			<?php the_title('<h1 class="single-post-title">', '</h1>');?>
+			<?php if (function_exists('the_subtitle')): ?>
+			<?php the_subtitle('<h2 class="subtitle">', '</h2>');?>
+			<?php endif;?>
 
+			<?php the_post_thumbnail('bulmascores_thumbnail', array(
+			//'class' => 'attachment-post-thumbnail my-custom-class',
+			'class' => 'single-post-thumbnail',
+			'alt'   => get_the_title(),
+			'title' => get_the_title(),
+			)
+			);?>
+		</div>
+		
 		<?php if ('post' === get_post_type()): ?>
-			<div class="post-meta">
+			<div class="post-meta signle-post-meta">
 				<p>
 					<?php esc_html_e('Last modified&nbsp;', 'bulmascores')?><time><?php the_modified_date('Y/m/j');?></time>
 					<?php // esc_html_e('by&nbsp;', 'bulmascores') . the_author_posts_link();?>
@@ -29,12 +40,6 @@
 			<?php
 endif;?>
 
-		<?php the_post_thumbnail('bulmascores_thumbnail', array(
-		//'class' => 'attachment-post-thumbnail my-custom-class',
-		'alt'   => get_the_title(),
-		'title' => get_the_title(),
-		)
-		);?>
 		</header><!-- .post-header -->
 
 
