@@ -1,0 +1,39 @@
+$breadcrumb-link-color: $white
+
+.breadcrumbs-yugioh
+    &.is-dark
+        background: $grey-light
+        
+        // .breadcrumb
+        //     &::before
+        //         li+li
+        //             color: $grey-darker
+.breadcrumb-yugioh
+    margin:       0  .75rem
+    padding: .35rem       0
+
+    a
+        align-items: center
+        color: $breadcrumb-link-color
+        &:hover
+            color: darken($breadcrumb-link-color,15%)
+    
+    &__list
+        align-items: flex-start
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+    &__item
+        align-center
+        display: flex
+        &:first-child
+            a
+                padding-left: 0
+        &:is-active
+            a
+                cursor: default
+                pointer-events: none
+    li + li
+        &::before
+            color: $breadcrumb-link-color
+            content: "\0002f"

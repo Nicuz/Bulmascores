@@ -21,7 +21,8 @@
 		<body <?php body_class();?>>
 			<!-- Navbar Menu -->
 			<header id="masthead" class="site-header">
-				<nav class="navbar is-light">
+				<!-- <nav class="navbar is-light"> -->
+				<nav class="navbar is-dark">
 					<div class="container">
 						<div class="navbar-brand">
 							<?php
@@ -37,29 +38,31 @@
 								<span></span>
 								<span></span>
 							</div>
-							</div><!-- .navbar-brand -->
-							<div id="navbarExampleTransparentExample" class="navbar-menu">
-								<div class="navbar-start">
-									<?php wp_nav_menu(array(
-									'theme_location' => 'menu-1', //change it according to your register_nav_menus() function
-									'depth'          => 2,
-									'container'      => 'navbar-start',
-									'items_wrap'     => '%3$s',
-									'walker'         => new Bulma_Walker(),
-									));
-									?>
-								</div>
-								<div class="navbar-end">
-									<div class="navbar-item">
-										<div id="social-icons" class="field is-grouped">
-											<a class="navbar-item" href="#"><i class="fab fa-github"></i></a>
-											<a class="navbar-item" href="#"><i class="fab fa-twitter"></i></a>
-											<a class="navbar-item" href="#"><i class="fab fa-linkedin"></i></a>
-											<a class="navbar-item" href="#"><i class="fab fa-youtube"></i></a>
-											</div><!-- .field -->
-											</div><!-- .navbar-item -->
-											</div><!-- .navbar-end -->
-										</div>
-										</div><!-- .container -->
-									</nav>
-									</header><!-- #masthead -->
+						</div><!-- .navbar-brand -->
+
+						<div id="navbarExampleTransparentExample" class="navbar-menu">
+							<div class="navbar-start">
+								<?php wp_nav_menu(array(
+								'theme_location' => 'menu-1', //change it according to your register_nav_menus() function
+								'depth'          => 2,
+								'container'      => 'navbar-start',
+								'items_wrap'     => '%3$s',
+								'walker'         => new Bulma_Walker(),
+								));
+								?>
+							</div>
+							<div class="navbar-end">
+								<div class="navbar-item">
+									<div id="social-icons" class="field is-grouped">
+										<a class="navbar-item" href="#"><i class="fab fa-github"></i></a>
+										<a class="navbar-item" href="#"><i class="fab fa-twitter"></i></a>
+										<a class="navbar-item" href="#"><i class="fab fa-linkedin"></i></a>
+										<a class="navbar-item" href="#"><i class="fab fa-youtube"></i></a>
+									</div><!-- .field -->
+								</div><!-- .navbar-item -->
+							</div><!-- .navbar-end -->
+						</div>
+					</div><!-- .container -->
+				<?php breadcrumb(); ?>
+				</nav>
+			</header><!-- #masthead -->
