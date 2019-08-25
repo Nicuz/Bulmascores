@@ -267,8 +267,8 @@ a img.aligncenter {
   background: #b5b5b5;
 }
 .breadcrumb-yugioh {
-  margin: 0  .75rem;
-  padding: .35rem       0;
+  padding: .5rem .75rem;
+  font-size: 0.85rem;
 }
 .breadcrumb-yugioh a {
   align-items: center;
@@ -293,7 +293,19 @@ a img.aligncenter {
   cursor: default;
   pointer-events: none;
 }
+.breadcrumb-yugioh li + li {
+  margin: 0 .3rem;
+}
 .breadcrumb-yugioh li + li::before {
   color: white;
   content: "\0002f";
+  margin-right: .3rem;
+}
+.breadcrumb-yugioh__current {
+  font-weight: 600;
+}
+@media screen and (min-width: 1025px) {
+  .breadcrumb-yugioh {
+    padding: .5rem 0;
+  }
 }

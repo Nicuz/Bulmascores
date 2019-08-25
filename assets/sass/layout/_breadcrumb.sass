@@ -1,5 +1,12 @@
 $breadcrumb-link-color: $white
+// Media queries breakpoints
+$mobile: 768px
+$tablet: 769px
+$desktop: 1024px
+$widescreen: 1216px
+$fullhd: 1408px
 
+// Smartphone and tablet
 .breadcrumbs-yugioh
     &.is-dark
         background: $grey-light
@@ -8,9 +15,12 @@ $breadcrumb-link-color: $white
         //     &::before
         //         li+li
         //             color: $grey-darker
+
+
 .breadcrumb-yugioh
-    margin:       0  .75rem
-    padding: .35rem       0
+    $size-6: .85rem
+    padding: .5rem .75rem
+    font-size: $size-6
 
     a
         align-items: center
@@ -34,6 +44,22 @@ $breadcrumb-link-color: $white
                 cursor: default
                 pointer-events: none
     li + li
+        margin: 0 .3rem
+
         &::before
             color: $breadcrumb-link-color
             content: "\0002f"
+            margin-right: .3rem
+    
+    &__current
+        font-weight: $weight-semibold
+
+    // &__fahome
+    //     &::before
+    //         content: '\f015'
+    //         font-family: 'Font Awesome 5 Free'
+
+
+@media screen and (min-width: $desktop + 1)
+    .breadcrumb-yugioh
+        padding: .5rem 0

@@ -38,7 +38,7 @@ function breadcrumb($divOption = array("class" => "breadcrumb-yugioh")) {
     $currentOption = 'class="breadcrumb-yugioh__current"';
 
     $str .= sprintf(
-      '<div %1$s><div %2$s><nav %3$s>%4$s<ul %5$s itemscope itemtype="%6$s"><li %7$s itemscope itemtype="%8$s" ><a itemprop="url" href="%9$s"><span itemprop="url">Home</span></a><meta itemprop="position" content="%8$d" /></li>',
+      '<div %1$s><div %2$s><nav %3$s>%4$s<ul %5$s itemscope itemtype="%6$s"><li %7$s itemscope itemtype="%8$s" ><a itemprop="url" href="%9$s"><span itemprop="url"><i class="fas fa-home"></i> Home</span></a><meta itemprop="position" content="%9$d" /></li>',
       $containerAttribute,
       $innerAttribute,
       $tagAttribute,
@@ -64,7 +64,7 @@ function breadcrumb($divOption = array("class" => "breadcrumb-yugioh")) {
           foreach( $ancestors as $ancestor ) {
             ++$position;//ポジションを設定する
             $str .= sprintf(
-              '<li %1$s itemscope itemtype="%2$s"><a itemprop="url" href="%3$s"><span itemprop="name">%4$s</span></a><meta itemprop="position" content="%5$d" /></li>',
+              '<li %1$s itemscope itemtype="%2$s"><a itemprop="url" href="%3$s"><span itemprop="name"><i class="far fa-folder-open"></i> %4$s</span></a><meta itemprop="position" content="%5$d" /></li>',
               $liAttribute,
               esc_html( $schemaList ),
               esc_url( get_category_link( $ancestor ) ),
@@ -75,7 +75,7 @@ function breadcrumb($divOption = array("class" => "breadcrumb-yugioh")) {
         }
 
         $str .= sprintf(
-          '<li %1$s itemscope itemtype="%2$s"><a itemprop="url" href="%3$s"><span itemprop="name">%4$s</span></a><meta itemprop="position" content="%5$d" /></li>',
+          '<li %1$s itemscope itemtype="%2$s"><a itemprop="url" href="%3$s"><span itemprop="name"><i class="far fa-folder-open"></i> %4$s</span></a><meta itemprop="position" content="%5$d" /></li>',
           $liAttribute,
           esc_html( $schemaList ),
           esc_url( get_category_link( $cat->term_id ) ),
@@ -84,7 +84,7 @@ function breadcrumb($divOption = array("class" => "breadcrumb-yugioh")) {
         );
 
         $str .= sprintf(
-          '<li %1$s itemscope itemtype="%2$s"><span %3$s itemprop="name">%4$s</span><meta itemprop="position" content="%5$d" /></li>',
+          '<li %1$s itemscope itemtype="%2$s"><span %3$s itemprop="name"> %4$s</span><meta itemprop="position" content="%5$d" /></li>',
           $liAttribute,
           esc_html( $schemaList ),
           $currentOption,

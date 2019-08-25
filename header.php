@@ -63,6 +63,6 @@
 							</div><!-- .navbar-end -->
 						</div>
 					</div><!-- .container -->
-				<?php breadcrumb(); ?>
 				</nav>
+				<?php breadcrumb(); ?>
 			</header><!-- #masthead -->
