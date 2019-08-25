@@ -30,6 +30,7 @@
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
+    "bulma": "^0.7.5",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
