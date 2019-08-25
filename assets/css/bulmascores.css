@@ -256,13 +256,44 @@ a img.aligncenter {
   position: relative;
 }
 .single-post-title {
-  font-size: 2.5rem;
-  color: #121212;
-  font-weight: 500;
-  display: block;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   background: rgba(248, 248, 255, 0.4);
+  padding: .3rem 0;
+}
+.breadcrumbs-yugioh.is-dark {
+  background: #b5b5b5;
+}
+.breadcrumb-yugioh {
+  margin: 0  .75rem;
+  padding: .35rem       0;
+}
+.breadcrumb-yugioh a {
+  align-items: center;
+  color: white;
+}
+.breadcrumb-yugioh a:hover {
+  color: #d9d9d9;
+}
+.breadcrumb-yugioh__list {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.breadcrumb-yugioh__item {
+  display: flex;
+}
+.breadcrumb-yugioh__item:first-child a {
+  padding-left: 0;
+}
+.breadcrumb-yugioh__item:is-active a {
+  cursor: default;
+  pointer-events: none;
+}
+.breadcrumb-yugioh li + li::before {
+  color: white;
+  content: "\0002f";
 }
