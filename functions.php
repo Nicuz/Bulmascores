@@ -178,5 +178,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// Customizer additions.
+// パンくずリスト
 require get_template_directory() . '/inc/breadcrumb.php';
+
+// カスタム投稿タイプ 
+require get_template_directory() . '/inc/custom_post_type.php';
