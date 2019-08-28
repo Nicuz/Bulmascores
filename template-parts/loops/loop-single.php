@@ -21,13 +21,21 @@
 			<?php the_subtitle('<h2 class="subtitle">', '</h2>');?>
 			<?php endif;?>
 
-			<?php the_post_thumbnail('bulmascores_thumbnail', array(
-			//'class' => 'attachment-post-thumbnail my-custom-class',
-			'class' => 'single-post-thumbnail',
-			'alt'   => get_the_title(),
-			'title' => get_the_title(),
-			)
-			);?>
+			<?php 
+				if (has_post_thumbnail() ) {
+					the_post_thumbnail('bulmascores_thumbnail', 
+						array(
+							//'class' => 'attachment-post-thumbnail my-custom-class',
+							'class' => 'single-post-thumbnail',
+							'alt'   => get_the_title(),
+							'title' => get_the_title(),
+						)
+					);
+				}else{
+					$image_url = get_template_directory_uri(). '/assets/img/daitai_cat.jpg';
+					echo '<img src='. $image_url. '>';
+				}
+			?>
 		</div>
 		
 		<?php if ('post' === get_post_type()): ?>
