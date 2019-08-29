@@ -17,17 +17,30 @@ function create_post_type() {
     ]);
 
      register_taxonomy(
-    'front_cat',  /* タクソノミーのslug */
-    'front',        /* 属する投稿タイプ */
-    array(
-      'hierarchical' => true,
-      'update_count_callback' => '_update_post_term_count',
-      'label' => 'カテゴリー',
-      'singular_label' => 'カテゴリー',
-      'public' => true,
-      'show_ui' => true
-    )
-  );
+       'front_news',  /* タクソノミーのslug */
+       'front',        /* 属する投稿タイプ */
+        array(
+          'hierarchical' => true,
+          'update_count_callback' => '_update_post_term_count',
+          'label' => 'ニュース',
+          'singular_label' => 'ニュース',
+          'public' => true,
+          'show_ui' => true
+        )
+        );
+
+     register_taxonomy(
+        'front_about',  /* タクソノミーのslug */
+        'front',        /* 属する投稿タイプ */
+        array(
+          'hierarchical' => true,
+          'update_count_callback' => '_update_post_term_count',
+          'label' => 'MDの概要',
+          'singular_label' => 'MDの概要',
+          'public' => true,
+          'show_ui' => true
+        )
+      );
     // register_post_type( 'news', [ // 投稿タイプ名の定義
     //     'labels' => [
     //         'name'          => 'ニュース', // 管理画面上で表示する投稿タイプ名
