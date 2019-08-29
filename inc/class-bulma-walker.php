@@ -27,7 +27,7 @@ class Bulma_Walker extends Walker_Nav_Menu {
 		if ( ! empty( $item->url ) ) {
 			$url = $item->url;
 		}
-		if ( in_array( 'menu-item-has-children',$item->classes ) ) {
+		if ( in_array( 'menu-item-has-children',(array)$item->classes ) ) {
 			$output .= '<div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link" href="' . $url . '">' . $item->title . '</a>';
 		} else {
 			$output .= '<a class="navbar-item" href="' . $url . '">' . $item->title . '</a>';
@@ -35,7 +35,7 @@ class Bulma_Walker extends Walker_Nav_Menu {
 	}
 
 	public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-		if ( in_array( 'menu-item-has-children',$item->classes ) ) {
+		if ( in_array( 'menu-item-has-children',(array)$item->classes ) ) {
 			$output .= '</div> <!-- .has-dropdown -->';
 		} else {
 			$output .= '';
