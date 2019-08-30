@@ -56,7 +56,7 @@ wp_reset_postdata();?>
 <?php endif;?>
 
 
-<main id="main" class="container">
+<main id="main" class="front-main--container">
 
 	<div class="columns">
 		<div class="column is-12">
