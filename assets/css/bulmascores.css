@@ -309,3 +309,9 @@ a img.aligncenter {
     padding: .5rem 0;
   }
 }
+.front-section__heading {
+  background: #363636;
+  color: white;
+  text-align: center;
+  padding: 16px 0;
+}

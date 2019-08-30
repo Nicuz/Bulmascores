@@ -87,13 +87,13 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
         //  echo  '<div class="column is-2">';
         //  echo    '<span class="front-icon">'.shard_fontawesome_random($taxonomy->term_id).'</span>'; // アイコンをtermi_idを元にしてランダムに生成する
         //  echo  '</div>';
-          echo    '<h2 class="title is-2 front-section__heading" id="' . esc_html($taxonomy->slug) . '">';
+          echo    '<h2 class="title is-3 front-section__heading" id="' . esc_html($taxonomy->slug) . '">';
           //echo      '<a href="'. $url_taxonomy .'">'. esc_html($taxonomy->name) .'</a>';
           echo    esc_html($taxonomy->name);
           echo    '</h2>';
           echo    '<div class="front-section__content">';
             foreach($tax_posts as $tax_post):
-               echo '<article class="front-section__article">';
+               echo '<article class="front-section__article container">';
                // echo '<h3 class="front-listItem"><a href="'. get_permalink($tax_post->ID).'">'. get_the_title($tax_post->ID).'</a></h3>';
                $custom_post = get_post($tax_post->ID);
                echo '<h3 class="title is-3 front-section__article__title">'. get_the_title($tax_post->ID).'</h3>';
