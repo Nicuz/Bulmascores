@@ -98,8 +98,8 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
                $custom_post = get_post($tax_post->ID);
                echo '<h3 class="title is-3 front-section__article__title">'. get_the_title($tax_post->ID).'</h3>';
                echo '<div class="columns">';
-               echo   '<div class="column">'.$custom_post->post_content.'</div>';
-               echo   '<div class="column">' .get_the_post_thumbnail( $tax_post->ID , 'thumbnail' ).'</div>';
+               echo   '<div class="column is-8">'.$custom_post->post_content.'</div>';
+               echo   '<div class="column is-4">' .get_the_post_thumbnail( $tax_post->ID , 'medium' ).'</div>';
                echo '</div>';
                echo '<a class="button" href="'.get_the_permalink($tax_post->ID).'">記事の詳細</a>';
                echo '</article>';
