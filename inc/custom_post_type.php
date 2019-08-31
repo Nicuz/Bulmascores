@@ -54,6 +54,66 @@ function create_post_type() {
     // ]);
 }
 
+// 作成したカスタム投稿タイプにカスタムフィールドを追加
+add_action('admin_menu', 'add_custom_fields');
+function add_custom_fields(){
+    add_meta_box(
+        'on-off-button', //編集画面セクションのHTML ID
+        '投稿のオン・オフ', //編集画面セクションのタイトル、画面上に表示される
+        'insertOnOffButton', //編集画面セクションにHTML出力する関数
+        'post', //投稿タイプ名
+        'normal' //編集画面セクションが表示される部分
+    );
+    add_meta_box(
+        'on-off-button', //編集画面セクションのHTML ID
+        '投稿のオン・オフ', //編集画面セクションのタイトル、画面上に表示される
+        'insertOnOffButton', //編集画面セクションにHTML出力する関数
+        'front', //投稿タイプ名
+        'normal' //編集画面セクションが表示される部分
+    );
+}
+// カスタムフィールドの入力エリア
+function insertOnOffButton() {
+	global $post;
+  
+  $options = array('OK','NG');
+  $n       = count($options);
+
+  $on_off_radio_field = get_post_meta($post->ID, 'on_off_radio_field',true);
+  echo '<label for="radio_field">ONにチェックが入った記事のみが表示されます。</label><br>';
+  for ($i=0; $i<$n; $i++) {
+	  $option = $options[$i];
+	  if ($option==$on_off_radio_field) {
+      echo '<input type="radio" name="on_off_radio_field" value="'. esc_html($option) .'" checked > '. $option .' ';
+	  } else {
+      echo '<input type="radio" name="on_off_radio_field" value="'. esc_html($option) .'" > '. $option .' ';
+    }
+  }
+
+// カスタムフィールドの保存（新規・更新・削除）
+function save_my_custom_fields( $post_id ) {
+  $mydata = $_POST['on_off_radio_field']; // input>name
+  $field_value = get_post_meta($post_id, 'on_off_radio_field', true);
+  if ($field_value == "")
+    add_post_meta($post_id, 'on_off_radio_field', $mydata, true);
+  elseif($mydata != $field_value)
+    update_post_meta($post_id, 'on_off_radio_field', $mydata);
+  elseif($mydata=="")
+    delete_post_meta($post_id, 'on_off_radio_field', $field_value);
+}
+
+	// if( get_post_meta($post->ID,'book_label',true) == "is-on" ) {
+	// 	$book_label_check = "checked";
+	// }//チェックされていたらチェックボックスの$book_label_checkの場所にcheckedを挿入
+	// echo 'ベストセラーラベル： <input type="checkbox" name="book_label" value="is-on" '.$book_label_check.' ><br>';
+}
+
+//画像をアップする場合は、multipart/form-dataの設定が必要なので、post_edit_form_tagをフックしてformタグに追加
+add_action('post_edit_form_tag', 'custom_metabox_edit_form_tag');
+function custom_metabox_edit_form_tag(){
+  echo ' enctype="multipart/form-data"';
+}
+
 // カスタム投稿をフロントに表示する
 if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
   function bulma_get_archive_custom_posts( $taxonomy_name = 'front_about',$post_type= 'front') 
