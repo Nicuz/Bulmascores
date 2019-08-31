@@ -16,18 +16,18 @@ function create_post_type() {
         'supports' => $Supports
     ]);
 
-     register_taxonomy(
-       'front_news',  /* タクソノミーのslug */
-       'front',        /* 属する投稿タイプ */
-        array(
-          'hierarchical' => true,
-          'update_count_callback' => '_update_post_term_count',
-          'label' => 'ニュース',
-          'singular_label' => 'ニュース',
-          'public' => true,
-          'show_ui' => true
-        )
-        );
+     // register_taxonomy(
+     //   'front_news',  /* タクソノミーのslug */
+     //   'front',        /* 属する投稿タイプ */
+     //    array(
+     //      'hierarchical' => true,
+     //      'update_count_callback' => '_update_post_term_count',
+     //      'label' => 'ニュース',
+     //      'singular_label' => 'ニュース',
+     //      'public' => true,
+     //      'show_ui' => true
+     //    )
+     //    );
 
      register_taxonomy(
         'front_about',  /* タクソノミーのslug */
@@ -65,7 +65,7 @@ function add_custom_fields(){
         'normal' //編集画面セクションが表示される部分
     );
     add_meta_box(
-        'on-off-button', //編集画面セクションのHTML ID
+        'on_off_custome_field', //編集画面セクションのHTML ID
         '投稿のオン・オフ', //編集画面セクションのタイトル、画面上に表示される
         'insertOnOffButton', //編集画面セクションにHTML出力する関数
         'front', //投稿タイプ名
@@ -79,34 +79,36 @@ function insertOnOffButton() {
   $options = array('OK','NG');
   $n       = count($options);
 
-  $on_off_radio_field = get_post_meta($post->ID, 'on_off_radio_field',true);
-  echo '<label for="radio_field">ONにチェックが入った記事のみが表示されます。</label><br>';
+  $radio_field = get_post_meta($post->ID, 'on_off',true);
+  echo '<label for="on_off_radio_field">ONにチェックが入った記事のみが表示されます。</label><br>';
   for ($i=0; $i<$n; $i++) {
 	  $option = $options[$i];
-	  if ($option==$on_off_radio_field) {
-      echo '<input type="radio" name="on_off_radio_field" value="'. esc_html($option) .'" checked > '. $option .' ';
+	  if ($option==$radio_field) {
+      echo '<input type="radio" name="on_off_radio_button" value="'. esc_html($option) .'" checked > '. $option .' ';
 	  } else {
-      echo '<input type="radio" name="on_off_radio_field" value="'. esc_html($option) .'" > '. $option .' ';
+      echo '<input type="radio" name="on_off_radio_button" value="'. esc_html($option) .'" > '. $option .' ';
     }
   }
+}
 
-// カスタムフィールドの保存（新規・更新・削除）
+// カスタムフィールドの保存（新規・更新・削除） 任意のラベルにmeta_keyを追加する
+add_action('save_post', 'save_my_custom_fields');
 function save_my_custom_fields( $post_id ) {
-  $mydata = $_POST['on_off_radio_field']; // input>name
-  $field_value = get_post_meta($post_id, 'on_off_radio_field', true);
-  if ($field_value == "")
-    add_post_meta($post_id, 'on_off_radio_field', $mydata, true);
-  elseif($mydata != $field_value)
-    update_post_meta($post_id, 'on_off_radio_field', $mydata);
-  elseif($mydata=="")
-    delete_post_meta($post_id, 'on_off_radio_field', $field_value);
+  $key = 'on_off';
+  $field_name = 'on_off_radio_button';
+  $data = $_POST[$field_name];
+  if (get_post_meta($post_id, $key) == "") // 新しいデータなら
+    add_post_meta($post_id, $key , $data, true);
+  elseif($data != get_post_meta($post_id, $key , true) ) //既存のデータで内容が異なるなら
+    update_post_meta($post_id, $key , $data);
+  elseif($data=="")
+    delete_post_meta($post_id, $key , get_post_meta($post_id, $key , true) );
 }
 
 	// if( get_post_meta($post->ID,'book_label',true) == "is-on" ) {
 	// 	$book_label_check = "checked";
 	// }//チェックされていたらチェックボックスの$book_label_checkの場所にcheckedを挿入
 	// echo 'ベストセラーラベル： <input type="checkbox" name="book_label" value="is-on" '.$book_label_check.' ><br>';
-}
 
 //画像をアップする場合は、multipart/form-dataの設定が必要なので、post_edit_form_tagをフックしてformタグに追加
 add_action('post_edit_form_tag', 'custom_metabox_edit_form_tag');
@@ -123,6 +125,7 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
         'hierarchical' => false
     );
     $taxonomys = get_terms( $taxonomy_name, $args);
+    // 指定したタクソノミーとその記事が存在する場合
     if(!is_wp_error($taxonomys) && count($taxonomys)) {
       foreach($taxonomys as $taxonomy) {
         $url_taxonomy = get_term_link($taxonomy->slug, $taxonomy_name);
@@ -137,8 +140,15 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
                       'terms'     => array($taxonomy -> term_id),
                       'field'    => 'term_id',
                       'operator' => 'IN',
-                      'include_children' => true
+                      'include_children' => true,
                      )
+            ),
+            // カスタムフィールドで表示のONOFF判定
+            'meta_query'  => array (
+              array(
+                'key'   => 'on_off',
+                'value' => 'OK'
+              )
             )
         );
         $tax_posts = get_posts( $tax_get_array );
