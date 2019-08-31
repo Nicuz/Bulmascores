@@ -58,17 +58,24 @@ function create_post_type() {
 add_action('admin_menu', 'add_custom_fields');
 function add_custom_fields(){
     add_meta_box(
-        'on-off-button', //編集画面セクションのHTML ID
+        'on-off-field', //編集画面セクションのHTML ID
         '投稿のオン・オフ', //編集画面セクションのタイトル、画面上に表示される
         'insertOnOffButton', //編集画面セクションにHTML出力する関数
         'post', //投稿タイプ名
         'normal' //編集画面セクションが表示される部分
     );
     add_meta_box(
-        'on_off_custome_field', //編集画面セクションのHTML ID
+        'on_off_field', //編集画面セクションのHTML ID
         '投稿のオン・オフ', //編集画面セクションのタイトル、画面上に表示される
         'insertOnOffButton', //編集画面セクションにHTML出力する関数
         'front', //投稿タイプ名
+        'normal' //編集画面セクションが表示される部分
+    );
+    add_meta_box(
+        'post-sort-field', //編集画面セクションのHTML ID
+        '投稿の順番を決める', //編集画面セクションのタイトル、画面上に表示される
+        'insertPostSort', //編集画面セクションにHTML出力する関数
+        'post', //投稿タイプ名
         'normal' //編集画面セクションが表示される部分
     );
 }
