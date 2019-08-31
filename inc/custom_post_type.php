@@ -54,6 +54,7 @@ function create_post_type() {
     // ]);
 }
 
+// カスタム投稿をフロントに表示する
 if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
   function bulma_get_archive_custom_posts( $taxonomy_name = 'front_about',$post_type= 'front') 
   {
