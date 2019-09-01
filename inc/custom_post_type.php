@@ -366,13 +366,14 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
           echo    '</h2>';
           echo    '<div class="front-section__content">';
             foreach($tax_posts as $tax_post):
+              // MAPは記事の内容やタイトルを直接出力しない
                echo '<article class="front-section__article container">';
                // echo '<h3 class="front-listItem"><a href="'. get_permalink($tax_post->ID).'">'. get_the_title($tax_post->ID).'</a></h3>';
-               $custom_post = get_post($tax_post->ID);
+               // $custom_post = get_post($tax_post->ID);
                echo '<h3 class="title is-3 front-section__article__title">'. get_the_title($tax_post->ID).'</h3>';
                echo '<div class="columns">';
-               echo   '<div class="column is-8">'.$custom_post->post_content.'</div>';
-               echo   '<div class="column is-4">' .get_the_post_thumbnail( $tax_post->ID , 'medium' ).'</div>';
+               echo   '<div class="column is-3">' .bulma_map_meta_data($tax_post->ID). '</div>';
+               echo   '<div class="column is-9">' .bulma_map_osm_data($tax_post->ID).'</div>';
                echo '</div>';
                echo '<a class="button" href="'.get_the_permalink($tax_post->ID).'">記事の詳細</a>';
                echo '</article>';
@@ -385,3 +386,33 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
     } // end if
   } // end function
 } // end exist
+
+if(!function_exists('bulma_map_meta_data')) {
+  function bulma_map_meta_data($tax_post_id){
+    global $post;
+    global $date_keymaps;
+
+    $keymaps = array();
+    $keymaps = $date_keymaps;
+
+    echo '<dl class="front_map--meta">';
+      foreach ($keymaps as $keylabel => $val) {
+        echo '<dt class="front_map--meta__dt">'.$keylabel.'<dt>';
+        echo '<dd class="front_map--meta__dd">' .get_post_meta($tax_post_id, $val['key_name'],true). '</dd>'; 
+      }
+    echo '</dl>';
+  }
+}
+
+if(!function_exists('bulma_map_osm_data')) {
+  function bulma_map_osm_data($tax_post_id){
+    global $post;
+    global $date_mappings;
+
+    $maps = array();
+    $maps    = $date_mappings;
+    foreach ($maps as $keylabel => $val) {
+      echo get_post_meta($tax_post_id, $val['key_name'],true); 
+    }
+  }
+}
