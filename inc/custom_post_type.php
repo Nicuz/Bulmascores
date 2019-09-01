@@ -99,14 +99,14 @@ function add_custom_fields(){
         'ここに必要な日時や地図情報を書きます', //編集画面セクションのタイトル、画面上に表示される
         'insertMetaData', //編集画面セクションにHTML出力する関数
         'map', //投稿タイプ名
-        'default' //編集画面セクションが表示される部分
+        'normal' //編集画面セクションが表示される部分
     );
     add_meta_box(
         'map_right', //編集画面セクションのHTML ID
         '地図情報', //編集画面セクションのタイトル、画面上に表示される
         'insertMap', //編集画面セクションにHTML出力する関数
         'map', //投稿タイプ名
-        'default' //編集画面セクションが表示される部分
+        'normal' //編集画面セクションが表示される部分
     );
     add_meta_box(
         'post-sort-field', //編集画面セクションのHTML ID
