@@ -372,8 +372,12 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
                // $custom_post = get_post($tax_post->ID);
                echo '<h3 class="title is-3 front-section__article__title">'. get_the_title($tax_post->ID).'</h3>';
                echo '<div class="columns">';
-               echo   '<div class="column is-3">' .bulma_map_meta_data($tax_post->ID). '</div>';
-               echo   '<div class="column is-9">' .bulma_map_osm_data($tax_post->ID).'</div>';
+               echo   '<div class="column is-4">';
+                      bulma_map_meta_data($tax_post->ID);
+               echo   '</div>';
+               echo   '<div class="column is-8">';
+                       bulma_map_osm_data($tax_post->ID);
+               echo   '</div>';
                echo '</div>';
                echo '<a class="button" href="'.get_the_permalink($tax_post->ID).'">記事の詳細</a>';
                echo '</article>';
@@ -395,10 +399,10 @@ if(!function_exists('bulma_map_meta_data')) {
     $keymaps = array();
     $keymaps = $date_keymaps;
 
-    echo '<dl class="front_map--meta">';
+    echo '<dl class="front-map--meta">';
       foreach ($keymaps as $keylabel => $val) {
-        echo '<dt class="front_map--meta__dt">'.$keylabel.'<dt>';
-        echo '<dd class="front_map--meta__dd">' .get_post_meta($tax_post_id, $val['key_name'],true). '</dd>'; 
+        echo '<dt class="front-map--meta__dt">'.$keylabel.'<dt>';
+        echo '<dd class="front-map--meta__dd">' .get_post_meta($tax_post_id, $val['key_name'],true). '</dd>'; 
       }
     echo '</dl>';
   }

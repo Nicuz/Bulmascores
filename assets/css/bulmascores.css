@@ -315,3 +315,21 @@ a img.aligncenter {
   text-align: center;
   padding: 16px 0;
 }
+.front-map--meta {
+  display: flex;
+  flex-wrap: wrap;
+}
+.front-map--meta__dt {
+  width: 33%;
+  border-bottom: 2px solid #363636;
+  margin-bottom: .5rem;
+  text-align: end;
+  padding-right: .5rem;
+}
+.front-map--meta__dd {
+  margin-left: auto;
+  width: 66%;
+  border-bottom: 1px solid #363636;
+  margin-bottom: .5rem;
+  padding-left: .5rem;
+}
