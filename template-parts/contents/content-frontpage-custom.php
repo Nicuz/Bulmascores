@@ -62,6 +62,7 @@ wp_reset_postdata();?>
 		<div class="column is-12">
 
 			<?php
+			  bulma_get_front_custom_posts(); 
 			  bulma_get_archive_custom_posts(); 
 			?>
 
