@@ -66,8 +66,6 @@ wp_reset_postdata();?>
 			  bulma_get_archive_custom_posts(); 
 			?>
 
-			<a class="button is-large" href="<?php echo esc_url_raw(get_permalink(get_option('page_for_posts'))); ?>"><?php esc_html_e('View all posts', 'bulmascores');?></a>
-
 		</div><!-- .columns is-12 -->
 
 	</div><!-- .columns -->
