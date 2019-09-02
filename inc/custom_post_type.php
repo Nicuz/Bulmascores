@@ -230,13 +230,14 @@ add_action('save_post', 'save_my_custom_fields');
 function save_my_custom_fields( $post_id ) {
   $key = 'on_off';
   $field_name = 'on_off_radio_button';
-  $data = $_POST[$field_name];
-  if (get_post_meta($post_id, $key) == "") // 新しいデータなら
-    add_post_meta($post_id, $key , $data, true);
-  elseif($data != get_post_meta($post_id, $key , true) ) //既存のデータで内容が異なるなら
-    update_post_meta($post_id, $key , $data);
-  elseif($data=="")
+  if( isset($_POST[$field_name]) ) {
+    $data = $_POST[$field_name];
+    if( $data != get_post_meta($post_id, $key , true) ) {//既存のデータで内容が異なるなら
+      update_post_meta($post_id, $key , $data);
+    }
+  }else{
     delete_post_meta($post_id, $key , get_post_meta($post_id, $key , true) );
+  }
 }
 
 	// if( get_post_meta($post->ID,'book_label',true) == "is-on" ) {
