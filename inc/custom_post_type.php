@@ -197,10 +197,10 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
                // $custom_post = get_post($tax_post->ID);
                echo '<h3 class="title is-3 front-section__article__title">'. get_the_title($tax_post->ID).'</h3>';
                echo '<div class="columns">';
-               echo   '<div class="column is-4">';
+               echo   '<div class="column">';
                       bulma_map_meta_data($tax_post->ID);
                echo   '</div>';
-               echo   '<div class="column is-8">';
+               echo   '<div class="column is-three-quaters">';
                        bulma_map_osm_data($tax_post->ID);
                echo   '</div>';
                echo '</div>';
