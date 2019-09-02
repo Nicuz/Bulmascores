@@ -132,7 +132,6 @@ if ( ! function_exists( 'bulma_get_front_custom_posts' ) ) {
                echo   '<div class="column is-8">'.$custom_post->post_content.'</div>';
                echo   '<div class="column is-4">' .get_the_post_thumbnail( $tax_post->ID , 'medium' ).'</div>';
                echo '</div>';
-               echo '<a class="button" href="'.get_the_permalink($tax_post->ID).'">記事の詳細</a>';
                echo '</article>';
             endforeach;
             wp_reset_postdata();
@@ -205,7 +204,7 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
                        bulma_map_osm_data($tax_post->ID);
                echo   '</div>';
                echo '</div>';
-               echo '<a class="button" href="'.get_the_permalink($tax_post->ID).'">記事の詳細</a>';
+               // echo '<a class="button" href="'.get_the_permalink($tax_post->ID).'">記事の詳細</a>';
                echo '</article>';
             endforeach;
             wp_reset_postdata();
