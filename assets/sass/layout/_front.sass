@@ -1,6 +1,8 @@
 $front-dl-lineheight: 2.5
 $front-dl-gap: .55rem
 $front-dl-gap-bottom: .25rem
+$heading-tri: 12px
+
 .front
     &-section
         &__heading
@@ -8,6 +10,19 @@ $front-dl-gap-bottom: .25rem
             color: $white
             text-align: center
             padding: $gap/2 0
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                right: 0
+                bottom: -($heading-tri)
+                left: 0
+                width: 0px
+                height: 0px
+                margin: auto
+                border-style: solid
+                border-color: $grey-darker transparent transparent transparent 
+                border-width: $heading-tri $heading-tri 0 $heading-tri
     
     &-map
         &--meta

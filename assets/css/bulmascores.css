@@ -314,6 +314,20 @@ a img.aligncenter {
   color: white;
   text-align: center;
   padding: 16px 0;
+  position: relative;
+}
+.front-section__heading::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -12px;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  border-style: solid;
+  border-color: #363636 transparent transparent transparent;
+  border-width: 12px 12px 0 12px;
 }
 .front-map--meta {
   display: flex;
