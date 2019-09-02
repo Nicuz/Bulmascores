@@ -225,9 +225,19 @@ if(!function_exists('bulma_map_meta_data')) {
     $keymaps = $date_keymaps;
 
     echo '<dl class="front-map--meta">';
-      foreach ($keymaps as $keylabel => $val) {
-        echo '<dt class="front-map--meta__dt">'.$keylabel.'<dt>';
-        echo '<dd class="front-map--meta__dd">' .get_post_meta($tax_post_id, $val['key_name'],true). '</dd>'; 
+      foreach ($keymaps as $key => $val) {
+        $key_name = esc_html( get_post_meta($tax_post_id, $val['key_name'],true) );
+        $key_public_name = $val['key_public_name']; 
+        if(isset($key_name)) {  
+          echo '<dt class="front-map--meta__dt">'.$key_public_name.'<dt>';
+          echo '<dd class="front-map--meta__dd">';
+            if($val['key_name'] != 'key_twitter') { // Twitterかどうかで条件分岐 
+              echo $key_name;
+            }else{
+              echo '<a href="//twitter.com/'.$key_name.'">@' .$key_name. '</a>';
+            }
+          echo '</dd>'; 
+        }
       }
     echo '</dl>';
   }

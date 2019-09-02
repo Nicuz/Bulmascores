@@ -49,23 +49,32 @@ function add_custom_fields(){
 $date_keymaps = array();
 $date_keymaps = array(
         '日時'      => array(
-                      'key_name'  => 'key_date',
-                      'key_value' => '2019/12/08'
+                      'key_name'         => 'key_date',
+                      'key_public_name'  => '開催日時',
+                      'key_value'        => '2019年12月'
                       ),
         '集合場所'  => array(
-                      'key_name'  => 'key_local',
-                      'key_value' => '千葉県立北総花の丘公園'
+                      'key_name'         => 'key_local',
+                      'key_public_name'  => '集合場所',
+                      'key_value'        => '千葉県立北総花の丘公園'
                       ),
-        'Twitter'  => array(
-                      'key_name'  => 'key_twitter',
-                      'key_value' => '@mdcnt'
+        '受付会場'  => array(
+                      'key_name'         => 'key_uketuke',
+                      'key_public_name'  => '受付会場',
+                      'key_value'        => '千葉県立北総花の丘公園'
+                      ),
+        'TwitterIDを書きます。@は不要です。'  => array(
+                      'key_name'         => 'key_twitter',
+                      'key_public_name'  => 'MD公式Twitter',
+                      'key_value'        => 'mdcnt'
                       )
       );
 $date_mappings = array();
 $date_mappings = array(
         'MAPを貼り付けてください'  => array(
-                      'key_name'  => 'key_map',
-                      'key_value' => 'OSM'
+                      'key_name'         => 'key_map',
+                      'key_public_name'  => '会場周辺地図',
+                      'key_value'        => 'OSMのコードを貼り付けます'
                       )
 );
 
