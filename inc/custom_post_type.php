@@ -149,7 +149,7 @@ function insertMetaData() {
   $keymaps = $date_keymaps;
   foreach ($keymaps as $keylabel => $val) {
     echo '<label for="' .$val['key_name']. '">' .$keylabel. '</label><br>';
-    echo '<input type="text" name="'.$val['key_name'].'" value="' .get_post_meta($post->ID, $val['key_name'],true). '" placeholder="'. esc_html($val['key_value']) .'"><br>';
+    echo '<input type="text" name="'.$val['key_name'].'" value="' .esc_html( get_post_meta($post->ID, $val['key_name'],true) ). '" placeholder="'. esc_html($val['key_value']) .'"><br>';
     // echo '<input type="text" name="'.$val['key_name'].'" placeholder="'. esc_html($val['key_value']) .'"><br>';
   }
 }
@@ -181,8 +181,12 @@ function insertMap() {
   $keymaps = array();
   $keymaps = $date_mappings;
   foreach ($keymaps as $keylabel => $val) {
-    echo '<label for="' .$val['key_name']. '">' .$keylabel. '</label><br>';
-    echo '<textarea id="'.$val['key_name'].'" type="text" name="'.$val['key_name'].'" value="' .get_post_meta($post->ID, $val['key_name'],true). '" placeholder="'. esc_html($val['key_value']) .'" cols="100" rows="8" ></textarea>';
+    $key_name = $val['key_name'];
+    echo '<label for="' .$key_name. '">' .$keylabel. '</label><br>';
+    echo '<textarea type="text" name="'.$key_name.'" placeholder="'. esc_html($val['key_value']) .'" cols="100" rows="8">';
+    echo esc_html( get_post_meta($post->ID, $val['key_name'], true) );
+    echo '</textarea>';
+    // echo '<textarea id="'.$val['key_name'].'" type="text" name="'.$val['key_name'].'" value="' .get_post_meta($post->ID, $val['key_name'],true). '" placeholder="'. esc_html($val['key_value']) .'" cols="100" rows="8" ></textarea>';
     // echo '<input type="text" name="'.$val['key_name'].'" placeholder="'. esc_html($val['key_value']) .'"><br>';
   }
 }
