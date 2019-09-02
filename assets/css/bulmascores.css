@@ -16,7 +16,6 @@ a:hover {
 }
 #primary {
   flex: 1 0 auto;
-  margin-top: 20px;
 }
 .pagination-link.is-current {
   background-color: #363636;
