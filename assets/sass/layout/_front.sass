@@ -1,3 +1,5 @@
+$front-dl-lineheight: 2.5
+$front-dl-gap: .85rem
 .front
     &-section
         &__heading
@@ -10,15 +12,16 @@
         &--meta
             display: flex
             flex-wrap: wrap
+            line-height: $front-dl-lineheight
             &__dt
-                width: 33%
+                font-weight: bold
+                width: 25%
                 border-bottom: 2px solid $grey-darker
-                margin-bottom: .5rem
+                padding-right: $front-dl-gap
                 text-align: end
-                padding-right: .5rem
             &__dd
                 margin-left: auto
-                width: 66%
-                border-bottom: 1px solid $grey-darker
-                margin-bottom: .5rem
-                padding-left: .5rem
+                font-weight: 700
+                width: 75%
+                border-bottom: 2px solid $grey-light
+                padding-left: $front-dl-gap

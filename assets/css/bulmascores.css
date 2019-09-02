@@ -318,18 +318,19 @@ a img.aligncenter {
 .front-map--meta {
   display: flex;
   flex-wrap: wrap;
+  line-height: 2.5;
 }
 .front-map--meta__dt {
-  width: 33%;
+  font-weight: bold;
+  width: 25%;
   border-bottom: 2px solid #363636;
-  margin-bottom: .5rem;
+  padding-right: 0.85rem;
   text-align: end;
-  padding-right: .5rem;
 }
 .front-map--meta__dd {
   margin-left: auto;
-  width: 66%;
-  border-bottom: 1px solid #363636;
-  margin-bottom: .5rem;
-  padding-left: .5rem;
+  font-weight: 700;
+  width: 75%;
+  border-bottom: 2px solid #b5b5b5;
+  padding-left: 0.85rem;
 }
