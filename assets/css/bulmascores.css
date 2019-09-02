@@ -318,19 +318,25 @@ a img.aligncenter {
 .front-map--meta {
   display: flex;
   flex-wrap: wrap;
-  line-height: 2.5;
 }
 .front-map--meta__dt {
   font-weight: bold;
   width: 25%;
   border-bottom: 2px solid #363636;
-  padding-right: 0.85rem;
+  padding-right: 0.55rem;
+  margin-bottom: 0.55rem;
+  padding-top: 0.55rem;
+  padding-bottom: 0.25rem;
   text-align: end;
 }
 .front-map--meta__dd {
   margin-left: auto;
   font-weight: 700;
   width: 75%;
+  padding-right: 0.55rem;
+  margin-bottom: 0.55rem;
+  padding-top: 0.55rem;
+  padding-left: 0.55rem;
+  padding-bottom: 0.25rem;
   border-bottom: 2px solid #b5b5b5;
-  padding-left: 0.85rem;
 }

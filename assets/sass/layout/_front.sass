@@ -1,5 +1,6 @@
 $front-dl-lineheight: 2.5
-$front-dl-gap: .85rem
+$front-dl-gap: .55rem
+$front-dl-gap-bottom: .25rem
 .front
     &-section
         &__heading
@@ -12,16 +13,23 @@ $front-dl-gap: .85rem
         &--meta
             display: flex
             flex-wrap: wrap
-            line-height: $front-dl-lineheight
+            // line-height: $front-dl-lineheight
             &__dt
                 font-weight: bold
                 width: 25%
                 border-bottom: 2px solid $grey-darker
                 padding-right: $front-dl-gap
+                margin-bottom: $front-dl-gap
+                padding-top:   $front-dl-gap
+                padding-bottom: $front-dl-gap-bottom
                 text-align: end
             &__dd
                 margin-left: auto
                 font-weight: 700
                 width: 75%
-                border-bottom: 2px solid $grey-light
+                padding-right: $front-dl-gap
+                margin-bottom: $front-dl-gap
+                padding-top:   $front-dl-gap
                 padding-left: $front-dl-gap
+                padding-bottom: $front-dl-gap-bottom
+                border-bottom: 2px solid $grey-light
