@@ -184,5 +184,8 @@ require get_template_directory() . '/inc/breadcrumb.php';
 // カスタム投稿タイプ 
 require get_template_directory() . '/inc/custom_post_type.php';
 
+// カスタムフィールド
+require get_template_directory() . '/inc/custom_fields.php';
+
 // 一般投稿の表示に関する制御
 require get_template_directory() . '/inc/get-post.php';
