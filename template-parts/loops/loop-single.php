@@ -40,7 +40,7 @@
 		<?php if ('post' === get_post_type()): ?>
 			<div class="post-meta signle-post-meta">
 				<p>
-					<?php esc_html_e('Last modified&nbsp;', 'bulmascores')?><time><?php the_modified_date('Y/m/j');?></time>
+					<?php esc_html_e('更新日', 'bulmascores')?><time><?php the_modified_date('Y/m/j');?></time>
 					<?php // esc_html_e('by&nbsp;', 'bulmascores') . the_author_posts_link();?>
 				</p>
 			</div><!-- .post-meta -->
