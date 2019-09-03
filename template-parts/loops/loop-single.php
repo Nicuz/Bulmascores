@@ -12,8 +12,8 @@
 <article id="post-<?php the_ID();?>" <?php post_class();?>>
 
 	<?php // bulmascores_post_meta('categories');?>
-	<header class="post-header">
-		<div class="single-post-header">
+	<header class="single-post-header">
+		<div class="single-post-content">
 			<?php // the_title('<h1 class="title is-1 single-post-title">', '</h1>');?>
 			<?php the_title('<h1 class="title is-1 single-post-title">', '</h1>');?>
 			<?php if (function_exists('the_subtitle')): ?>

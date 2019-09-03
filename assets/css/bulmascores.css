@@ -249,6 +249,9 @@ a img.aligncenter {
   width: 70px;
 }
 .single-post-header {
+  margin-bottom: 4rem;
+}
+.single-post-content {
   position: relative;
 }
 .single-post-title {
