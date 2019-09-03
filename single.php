@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area primary-content"> <!-- This is Single -->
+<div id="primary" class="content-area primary-content--single"> <!-- This is Single -->
 	<main id="main" class="container">
 
 		<div class="columns is-desktop">

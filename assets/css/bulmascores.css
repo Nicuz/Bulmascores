@@ -352,5 +352,16 @@ a img.aligncenter {
 }
 .primary-content {
   flex: 1 0 auto;
+}
+.primary-content--front {
+  margin-top: 0px;
+}
+.primary-content--single {
+  margin-top: 20px;
+}
+.primary-content--index {
+  margin-top: 20px;
+}
+.primary-content--page {
   margin-top: 20px;
 }

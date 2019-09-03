@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area primary-content">
+<div id="primary" class="content-area primary-content--index">
 
 	<main id="main" class="container">
 
