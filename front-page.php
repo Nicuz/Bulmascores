@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area"> <!-- this is frontpage -->
+<div id="primary" class="content-area primary-content"> <!-- this is frontpage -->
 
 	<?php get_template_part( 'template-parts/contents/content', 'frontpage-custom' ); ?>
 

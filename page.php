@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area primary-content">
 		<main id="main" class="container">
 
 			<div class="columns is-centered">
