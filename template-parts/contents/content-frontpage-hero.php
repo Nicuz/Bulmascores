@@ -4,7 +4,7 @@
             <div class="hero-mdcenter container has-text-centered">
                 <h1 class="title is-1"><?php bloginfo('name'); ?></h1>
                 <h2 class="subtitle is-3"><?php bloginfo('description'); ?></h2>
-                <a class="button is-large is-rounded is-info" href="//ingress.com/ja/events/">参加</a>
+                <a class="button is-large is-rounded" href="//ingress.com/ja/events/">参加</a>
             </div>
         </div>
     </div>
