@@ -368,3 +368,13 @@ a img.aligncenter {
 .primary-content--page {
   margin-top: 20px;
 }
+.hero-mdcenter {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  padding: 3rem 1.5rem;
+}
+@media screen and (min-width: 1025px) {
+  .hero-mdcenter {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+}

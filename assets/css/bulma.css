@@ -8228,14 +8228,14 @@ a.panel-block:hover, label.panel-block:hover {
 }
 @media screen and (min-width: 769px), print {
   .hero.is-medium .hero-body {
-    padding-bottom: 9rem;
-    padding-top: 9rem;
+    padding-bottom: 4.5rem;
+    padding-top: 4.5rem;
   }
 }
 @media screen and (min-width: 769px), print {
   .hero.is-large .hero-body {
-    padding-bottom: 18rem;
-    padding-top: 18rem;
+    padding-top: 9rem;
+    padding-top: 9rem;
   }
 }
 .hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body {
@@ -8298,7 +8298,6 @@ a.panel-block:hover, label.panel-block:hover {
 .hero-body {
   flex-grow: 1;
   flex-shrink: 0;
-  padding: 3rem 1.5rem;
 }
 .section {
   padding: 3rem 1.5rem;
