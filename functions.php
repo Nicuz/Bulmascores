@@ -131,15 +131,23 @@ add_action( 'widgets_init', 'bulmascores_widgets_init' );
 
 // Enqueue scripts and styles.
 function bulmascores_scripts() {
+	$bulmacss = '/assets/css/bulma.css';
 	$bulmascores = '/assets/css/bulmascores.css';
-	wp_enqueue_style( 'bulmascores-bulma-css', '//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css', array(), null );
-	wp_enqueue_style( 'bulmascores-fontawesome', '//use.fontawesome.com/releases/v5.10.2/css/all.css', array(), null );
+	// wp_enqueue_style( 'bulmascores-bulma-css', '//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css', array(), null );
+	wp_register_style( 'bulmascores-bulma-css', 
+					   get_template_directory_uri().$bulmacss, 
+					   array(),
+					   date("YsmdHi",filemtime(get_stylesheet_directory().$bulmacss) ), // 更新時間を追記してキャッシュしないようにする 
+					   'all'
+				    );
 	wp_register_style( 'bulmascores-overrides-style', 
 						get_template_directory_uri() . $bulmascores, 
 						array(), 
 						date("YsmdHi",filemtime(get_stylesheet_directory().$bulmascores) ), // 更新時間を追記してキャッシュしないようにする 
 						'all' 
 					);
+	wp_enqueue_style( 'bulmascores-bulma-css' );
+	wp_enqueue_style( 'bulmascores-fontawesome', '//use.fontawesome.com/releases/v5.10.2/css/all.css', array(), null );
 	wp_enqueue_style( 'bulmascores-overrides-style');
 	// wp_enqueue_style( 'bulmascores-overrides-style', get_template_directory_uri() . '/assets/css/bulmascores.min.css', array(), null );
 	wp_enqueue_script( 'bulmascores-burger-js', get_template_directory_uri() . '/assets/js/bulma_nav_burger.js', array(), null, true );
