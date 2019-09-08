@@ -372,6 +372,18 @@ a img.aligncenter {
   background: linear-gradient(30deg, rgba(0, 210, 180, 0.6), rgba(12, 102, 161, 0.6));
   padding: 3rem 1.5rem;
 }
+@media screen and (min-width: 769px), print {
+  .hero.is-medium .hero-body--2 {
+    padding-bottom: 4.5rem;
+    padding-top: 4.5rem;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .hero.is-large .hero-body--2 {
+    padding-bottom: 9rem;
+    padding-top: 9rem;
+  }
+}
 @media screen and (min-width: 1025px) {
   .hero-mdcenter {
     padding-top: 9rem;

@@ -2,6 +2,16 @@
     &-mdcenter
         background: linear-gradient(30deg, rgba(0,210,180, 0.6),rgba(12,102,161, 0.6))
         padding: 3rem 1.5rem
+    &.is-medium
+        +tablet 
+            .hero-body--2
+                padding-bottom: 4.5rem
+                padding-top:    4.5rem
+    &.is-large
+        +tablet 
+            .hero-body--2
+                padding-bottom: 9rem
+                padding-top:    9rem
 @media screen and (min-width: $desktop + 1)
     .hero    
         &-mdcenter

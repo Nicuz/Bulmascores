@@ -8228,14 +8228,14 @@ a.panel-block:hover, label.panel-block:hover {
 }
 @media screen and (min-width: 769px), print {
   .hero.is-medium .hero-body {
-    padding-bottom: 4.5rem;
-    padding-top: 4.5rem;
+    padding-bottom: 9rem;
+    padding-top: 9rem;
   }
 }
 @media screen and (min-width: 769px), print {
   .hero.is-large .hero-body {
-    padding-top: 9rem;
-    padding-top: 9rem;
+    padding-top: 18rem;
+    padding-bottom: 18rem;
   }
 }
 .hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body {
