@@ -122,22 +122,27 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
           //echo      '<a href="'. $url_taxonomy .'">'. esc_html($taxonomy->name) .'</a>';
           echo    esc_html($taxonomy->name);
           echo    '</h2>';
-          echo    '<div class="front-section__content">';
+          // echo    '<div class="front-section__content">';
             foreach($tax_posts as $tax_post):
-               echo '<article class="front-section__article container">';
-                  $custom_post = get_post($tax_post->ID);
+                $custom_post = get_post($tax_post->ID);
+               // echo '<article class="front-section__article container">';
+               echo '<div class="front-section__container container">';
                // echo '<h3 class="front-listItem"><a href="'. get_permalink($tax_post->ID).'">'. get_the_title($tax_post->ID).'</a></h3>';
-               echo '<div class="columns">';
-               echo '<div class="column is-6>';
-               echo '<h3 class="front-section__article__title is-6">'. get_the_title($tax_post->ID).'</h3>';
+               echo '  <div class="front-section__container__img">' .get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
+               echo '  <article class="front-section__article columns">';
+               echo '    <div class="front-section__article__contents column">';
+               echo '      <h3 class="front-section__article__title is-6">'. get_the_title($tax_post->ID).'</h3>';
+               echo '    </div>';
+               echo '    <div class="front-section__article__contents column">';
+               echo '      <div class="front-section__article__post column">';
+               echo        strip_shortcodes($custom_post->post_content);
+               echo '      </div>';
+               echo '    </div>';
+               echo '  </article>';
                echo '</div>';
-               echo '<div class="front-section__article__post column is-6">'.$custom_post->post_content.'</div>';
-               echo '</div>';
-               echo '<div class="front-section__article__img">' .get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
-               echo '</article>';
             endforeach;
             wp_reset_postdata();
-          echo    '</div>';
+          // echo    '</div>';
           echo  '</section>';
         endif;
       } // end foreach
