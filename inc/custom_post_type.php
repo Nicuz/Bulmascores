@@ -126,15 +126,15 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
             foreach($tax_posts as $tax_post):
                 $custom_post = get_post($tax_post->ID);
                // echo '<article class="front-section__article container">';
-               echo '<div class="front-section__container container">';
+               echo '<div class="front-section__container--about container">';
                // echo '<h3 class="front-listItem"><a href="'. get_permalink($tax_post->ID).'">'. get_the_title($tax_post->ID).'</a></h3>';
-               echo '  <div class="front-section__container__img">' .get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
-               echo '  <article class="front-section__article columns">';
-               echo '    <div class="front-section__article__contents column">';
-               echo '      <h3 class="front-section__article__title is-6">'. get_the_title($tax_post->ID).'</h3>';
+               echo '  <div class="front-section__container--about__img">' .get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
+               echo '  <article class="front-section__article--about columns is-mobile">';
+               echo '    <div class="front-section__article--about__contents is-title column">';
+               echo '      <h3 class="front-section__article--about__title">'. get_the_title($tax_post->ID).'</h3>';
                echo '    </div>';
-               echo '    <div class="front-section__article__contents column">';
-               echo '      <div class="front-section__article__post column">';
+               echo '    <div class="front-section__article--about__contents is-post column">';
+               echo '      <div class="front-section__article--about__post">';
                echo        strip_shortcodes($custom_post->post_content);
                echo '      </div>';
                echo '    </div>';
