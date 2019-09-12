@@ -76,6 +76,74 @@ function custom_metabox_edit_form_tag(){
   echo ' enctype="multipart/form-data"';
 }
 
+// カスタム投稿をフロントに表示する-second
+if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
+  function bulma_get_front_custom_posts_2( $taxonomy_name = 'front_about',$post_type= 'front') 
+  {
+    $args = array(
+        'orderby' => 'name',
+        'hierarchical' => false
+    );
+    $taxonomys = get_terms( $taxonomy_name, $args);
+    // 指定したタクソノミーとその記事が存在する場合
+    if(!is_wp_error($taxonomys) && count($taxonomys)) {
+      foreach($taxonomys as $taxonomy) {
+        $url_taxonomy = get_term_link($taxonomy->slug, $taxonomy_name);
+        $tax_get_array = array(
+            'post_type' => $post_type, //表示したいカスタム投稿
+            'posts_per_page' => 5,//表示件数
+            // https://blog.nakachon.com/2014/10/27/dont-use-name-field-tax-query-in-japanese/
+            // termsにはidを, fieldにはterm_idを入れるべき
+            'tax_query' => array(
+                array(
+                      'taxonomy' => $taxonomy_name,
+                      'terms'     => array($taxonomy -> term_id),
+                      'field'    => 'term_id',
+                      'operator' => 'IN',
+                      'include_children' => true,
+                     )
+            ),
+            // カスタムフィールドで表示のONOFF判定
+            'meta_query'  => array (
+              array(
+                'key'   => 'on_off',
+                'value' => 'OK'
+              )
+            )
+        );
+        $tax_posts = get_posts( $tax_get_array );
+        // ポストが存在するならば
+        if($tax_posts):
+          echo  '<section class="front-section">';
+        //  echo  '<div class="column is-2">';
+        //  echo    '<span class="front-icon">'.shard_fontawesome_random($taxonomy->term_id).'</span>'; // アイコンをtermi_idを元にしてランダムに生成する
+        //  echo  '</div>';
+          echo    '<h2 class="title is-3 front-section__heading" id="' . esc_html($taxonomy->slug) . '">';
+          //echo      '<a href="'. $url_taxonomy .'">'. esc_html($taxonomy->name) .'</a>';
+          echo    esc_html($taxonomy->name);
+          echo    '</h2>';
+          echo    '<div class="front-section__content">';
+            foreach($tax_posts as $tax_post):
+               echo '<article class="front-section__article container">';
+                  $custom_post = get_post($tax_post->ID);
+               // echo '<h3 class="front-listItem"><a href="'. get_permalink($tax_post->ID).'">'. get_the_title($tax_post->ID).'</a></h3>';
+               echo '<div class="columns">';
+               echo '<div class="column is-6>';
+               echo '<h3 class="front-section__article__title is-6">'. get_the_title($tax_post->ID).'</h3>';
+               echo '</div>';
+               echo '<div class="front-section__article__post column is-6">'.$custom_post->post_content.'</div>';
+               echo '</div>';
+               echo '<div class="front-section__article__img">' .get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
+               echo '</article>';
+            endforeach;
+            wp_reset_postdata();
+          echo    '</div>';
+          echo  '</section>';
+        endif;
+      } // end foreach
+    } // end if
+  } // end function
+} // end exist
 // カスタム投稿をフロントに表示する
 if ( ! function_exists( 'bulma_get_front_custom_posts' ) ) {
   function bulma_get_front_custom_posts( $taxonomy_name = 'front_about',$post_type= 'front') 
