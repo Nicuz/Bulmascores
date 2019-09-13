@@ -135,7 +135,8 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
                echo '    </div>';
                echo '    <div class="front-section__article--about__contents is-post column">';
                echo '      <div class="front-section__article--about__post">';
-               echo        strip_shortcodes($custom_post->post_content);
+               // echo        strip_shortcodes($custom_post->post_content);
+               echo        strip_shortcodes($custom_post->post_excerpt);
                echo '      </div>';
                echo '    </div>';
                echo '  </article>';
