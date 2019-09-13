@@ -2,7 +2,7 @@
 // カスタム投稿タイプの設定
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
-    $Supports = ['title','editor','revisions','cumstom-fields','thumbnail'];
+    $Supports = ['title','editor','revisions','cumstom-fields','thumbnail','excerpt'];
 
     // フロントのMD概要
     register_post_type( 'front', [ // 投稿タイプ名の定義
