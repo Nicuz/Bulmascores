@@ -90,6 +90,12 @@ if ( ! function_exists( 'bulmascores_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'bulmascores_setup' );
 
+// 投稿画面等に注釈を入れる
+function after_title_content() {
+  echo '<p style="background-color:orange; color:black;font-weight:bold">必須項目：タイトル名・抜粋・カテゴリー（カテゴリーは一つのみ選べます）</p><br><p style="background-color:yellow; color:black;font-weight:bold">推奨項目：本文・アイキャッチ</p>';
+}
+add_action( 'edit_form_after_title', 'after_title_content' );
+
 // Remove WordPress version number
 remove_action( 'wp_head', 'wp_generator' );
 
