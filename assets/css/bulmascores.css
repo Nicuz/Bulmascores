@@ -310,6 +310,9 @@ a img.aligncenter {
 .front-section {
   margin-bottom: 2.4rem;
 }
+.front-section__link--about {
+  padding: .75rem;
+}
 .front-section__heading {
   background: #363636;
   color: white;
