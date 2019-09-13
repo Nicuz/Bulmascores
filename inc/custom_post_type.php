@@ -128,22 +128,25 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
                $custom_post = get_post($tax_post->ID);
                // echo '<article class="front-section__article container">';
                echo '<div class="front-section__container--about container">';
-               echo '<a class="front-section__link"><a href="'. get_permalink($tax_post->ID).'">';
-               echo '  <div class="front-section__container--about__img">' .get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
+               echo '  <div class="front-section__container--about__img">'.get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
                if($current_post%2 != 0) {
                echo '  <article class="front-section__article--about columns is-mobile">';
                }else{
                echo '  <article class="front-section__article--about is-reverse columns is-mobile">';
                }
                echo '    <div class="front-section__article--about__contents is-title column">';
+               echo '    <a class="front-section__article--about__link" href="'. get_permalink($tax_post->ID).'">';
                echo '      <h3 class="front-section__article--about__title">'. get_the_title($tax_post->ID).'</h3>';
+               echo '    </a>';
                echo '    </div>';
                echo '    <div class="front-section__article--about__contents is-post column">';
+               echo '    <a class="front-section__article--about__link" href="'. get_permalink($tax_post->ID).'">';
                echo '      <div class="front-section__article--about__post">';
-               // echo        strip_shortcodes($custom_post->post_content);
                echo        strip_shortcodes($custom_post->post_excerpt);
                echo '      </div>';
+               echo '    </a>';
                echo '    </div>';
+               // echo '      <div class="front-section__article--about__link"><a class="button" href="'. get_permalink($tax_post->ID).'">詳細を表示</a></div>'; 
                echo '  </article>';
                echo '</a>';
                echo '</div>';
