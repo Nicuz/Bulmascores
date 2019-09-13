@@ -128,7 +128,7 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
                $custom_post = get_post($tax_post->ID);
                // echo '<article class="front-section__article container">';
                echo '<div class="front-section__container--about container">';
-               // echo '<h3 class="front-listItem"><a href="'. get_permalink($tax_post->ID).'">'. get_the_title($tax_post->ID).'</a></h3>';
+               echo '<a class="front-section__link"><a href="'. get_permalink($tax_post->ID).'">';
                echo '  <div class="front-section__container--about__img">' .get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
                if($current_post%2 != 0) {
                echo '  <article class="front-section__article--about columns is-mobile">';
@@ -145,6 +145,7 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
                echo '      </div>';
                echo '    </div>';
                echo '  </article>';
+               echo '</a>';
                echo '</div>';
                $current_post++;
             endforeach;
