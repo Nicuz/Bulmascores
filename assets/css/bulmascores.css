@@ -352,6 +352,9 @@ a img.aligncenter {
   height: 100%;
   overflow: hidden;
 }
+.front-section__article--about.is-reverse {
+  flex-direction: row-reverse;
+}
 .front-section__article--about__contents {
   display: flex;
   justify-content: center;

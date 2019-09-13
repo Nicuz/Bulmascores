@@ -114,6 +114,7 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
         $tax_posts = get_posts( $tax_get_array );
         // ポストが存在するならば
         if($tax_posts):
+          $current_post = 1;
           echo  '<section class="front-section">';
         //  echo  '<div class="column is-2">';
         //  echo    '<span class="front-icon">'.shard_fontawesome_random($taxonomy->term_id).'</span>'; // アイコンをtermi_idを元にしてランダムに生成する
@@ -124,12 +125,16 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
           echo    '</h2>';
           // echo    '<div class="front-section__content">';
             foreach($tax_posts as $tax_post):
-                $custom_post = get_post($tax_post->ID);
+               $custom_post = get_post($tax_post->ID);
                // echo '<article class="front-section__article container">';
                echo '<div class="front-section__container--about container">';
                // echo '<h3 class="front-listItem"><a href="'. get_permalink($tax_post->ID).'">'. get_the_title($tax_post->ID).'</a></h3>';
                echo '  <div class="front-section__container--about__img">' .get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
+               if($current_post%2 != 0) {
                echo '  <article class="front-section__article--about columns is-mobile">';
+               }else{
+               echo '  <article class="front-section__article--about is-reverse columns is-mobile">';
+               }
                echo '    <div class="front-section__article--about__contents is-title column">';
                echo '      <h3 class="front-section__article--about__title">'. get_the_title($tax_post->ID).'</h3>';
                echo '    </div>';
@@ -141,6 +146,7 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
                echo '    </div>';
                echo '  </article>';
                echo '</div>';
+               $current_post++;
             endforeach;
             wp_reset_postdata();
           // echo    '</div>';
