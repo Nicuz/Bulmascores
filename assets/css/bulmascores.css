@@ -335,12 +335,10 @@ a img.aligncenter {
   max-height: 360px;
 }
 .front-section__container--about__img {
-  width: 100%;
-  height: 100%;
   max-height: 360px;
 }
 .front-section__container--about__img img {
-  width: 100%;
+  height: 100%;
   max-height: 360px;
   object-fit: cover;
 }
@@ -357,6 +355,7 @@ a img.aligncenter {
 .front-section__article--about__contents {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-bottom: 0;
 }
@@ -367,7 +366,6 @@ a img.aligncenter {
   background: rgba(255, 255, 255, 0.85);
 }
 .front-section__article--about__title {
-  margin: auto 0;
   font-size: 2rem;
   font-weight: 700;
   color: white;

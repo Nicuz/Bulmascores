@@ -29,11 +29,12 @@ $heading-tri: 12px
                 position: relative
                 max-height: 360px // ここはいいかげん
                 &__img
-                    width: 100%
-                    height: 100%
+                    // width: 100%
+                    // height: 100%
                     max-height: 360px // ここはいいかげん
                     img
-                        width: 100%
+                        // width: 100%
+                        height: 100%
                         max-height: 360px // ここはいいかげん
                         object-fit: cover
         &__article
@@ -49,6 +50,7 @@ $heading-tri: 12px
                 &__contents
                     display: flex
                     justify-content: center
+                    align-items: center
                     flex-wrap: wrap
                     margin-bottom: 0
                     +desktop
@@ -57,7 +59,7 @@ $heading-tri: 12px
                     &.is-post
                         background: rgba($white,.85)
                 &__title
-                    margin: auto 0
+                    // margin: auto 0
                     font-size: $size-3
                     font-weight: $weight-bold
                     color: $white
