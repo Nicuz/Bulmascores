@@ -36,7 +36,7 @@ while ($bulmascores_the_query->have_posts()):
 		<section style="background: linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0, 0.4)), url(<?php echo esc_url_raw($bulmascores_img_attributes[0]); ?>); background-size: cover; background-position: center center;" class="hero is-primary is-medium carousel-cell">
 			<div class="hero-body">
 				<div class="container has-text-centered">
-					<a href="<?php the_permalink();?>"><h1 class="title">
+					<a href="<?php the_permalink();?>"><h1 class="hero-title title">
 						<?php the_title();?>
 					</h1></a>
 					<h2 class="subtitle">

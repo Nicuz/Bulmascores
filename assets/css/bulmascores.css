@@ -369,10 +369,15 @@ a img.aligncenter {
   background: rgba(255, 255, 255, 0.85);
 }
 .front-section__article--about__title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: white;
   text-shadow: 5px 5px 5px #7a7a7a;
+}
+@media screen and (min-width: 769px), print {
+  .front-section__article--about__title {
+    font-size: 2rem;
+  }
 }
 .front-section__article--about__post {
   font-weight: 600;
@@ -416,6 +421,19 @@ a img.aligncenter {
 }
 .primary-content--page {
   margin-top: 20px;
+}
+.hero-title {
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 769px), print {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
 }
 .hero-mdcenter {
   background: linear-gradient(30deg, rgba(0, 210, 180, 0.6), rgba(12, 102, 161, 0.6));
