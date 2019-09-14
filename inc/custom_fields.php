@@ -37,13 +37,13 @@ function add_custom_fields(){
         'map', //投稿タイプ名
         'normal' //編集画面セクションが表示される部分
     );
-    add_meta_box(
-        'catch', //編集画面セクションのHTML ID
-        'キャッチコピー', //編集画面セクションのタイトル、画面上に表示される
-        'insertCatch', //編集画面セクションにHTML出力する関数
-        'front', //投稿タイプ名
-        'normal' //編集画面セクションが表示される部分
-    );
+//    add_meta_box(
+//        'catch', //編集画面セクションのHTML ID
+//        'キャッチコピー', //編集画面セクションのタイトル、画面上に表示される
+//        'insertCatch', //編集画面セクションにHTML出力する関数
+//        'front', //投稿タイプ名
+//        'normal' //編集画面セクションが表示される部分
+//    );
     add_meta_box(
         'post-sort-field', //編集画面セクションのHTML ID
         '投稿の順番を決める', //編集画面セクションのタイトル、画面上に表示される
@@ -102,7 +102,7 @@ function insertCatch() {
   $keymaps = $key_catch;
 
   foreach ($keymaps as $key => $val) {
-    echo '<label for="' .$key. '">' .$val['key_label']. '</label><br>';
+    // echo '<label for="' .$key. '">' .$val['key_label']. '</label><br>';
     echo '<input type="text" width="60" name="'.$key.'" value="' .esc_html( get_post_meta($post->ID, $key, true) ). '" placeholder="'. esc_html($val['key_value']) .'"><br>';
     // echo '<input type="text" name="'.$val['key_name'].'" placeholder="'. esc_html($val['key_value']) .'"><br>';
   }

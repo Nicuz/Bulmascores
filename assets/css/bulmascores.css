@@ -376,7 +376,7 @@ a img.aligncenter {
   background: rgba(54, 54, 54, 0.1);
 }
 .front-section__article--about__contents.is-post {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(54, 54, 54, 0.95);
 }
 .front-section__article--about__title {
   font-size: 1.5rem;
@@ -390,7 +390,12 @@ a img.aligncenter {
   }
 }
 .front-section__article--about__post {
+  padding: .75rem;
+}
+.front-section__article--about__post p {
+  color: #c9c9c9;
   font-weight: 600;
+  line-height: 1.2;
 }
 .front-section__article--about__link {
   display: flex;
@@ -400,11 +405,20 @@ a img.aligncenter {
   flex-wrap: wrap;
   margin-bottom: 0;
   position: absolute;
-  padding: .75rem;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+}
+.front-section__article--about__catchtitle {
+  color: #ffdd57;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 769px), print {
+  .front-section__article--about__catchtitle {
+    font-size: 2rem;
+  }
 }
 .front-map--meta {
   display: flex;

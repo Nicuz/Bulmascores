@@ -73,7 +73,7 @@ $heading-tri: 12px
                     &.is-title
                         background: rgba($grey-darker,.1)
                     &.is-post
-                        background: rgba($white,.85)
+                        background: rgba($grey-darker,.95)
                 &__title
                     // margin: auto 0
                     font-size: $size-4
@@ -83,7 +83,11 @@ $heading-tri: 12px
                     color: $white
                     text-shadow: 5px 5px 5px $grey
                 &__post
-                    font-weight: $weight-semibold
+                    padding: .75rem
+                    p
+                        color: invert($grey-darker)
+                        font-weight: $weight-semibold
+                        line-height: 1.2
                 &__link
                     display: flex
                     flex-direction: column
@@ -92,11 +96,16 @@ $heading-tri: 12px
                     flex-wrap: wrap
                     margin-bottom: 0
                     position: absolute
-                    padding: .75rem
                     width: 100%
                     height: 100%
                     top: 0
                     left: 0
+                &__catchtitle
+                    color: $yellow
+                    font-weight: $weight-bold
+                    font-size: $size-4
+                    +tablet
+                        font-size: $size-3
     
     &-map
         &--meta

@@ -126,9 +126,15 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
           // echo    '<div class="front-section__content">';
             foreach($tax_posts as $tax_post):
                $custom_post = get_post($tax_post->ID);
+               $custom_excerpt = strip_shortcodes($custom_post->post_excerpt); 
+               if( get_the_post_thumbnail($tax_post->ID , 'full') ) {
+                $custom_thumbnail = get_the_post_thumbnail($tax_post->ID , 'full');
+               }else{
+                $custom_thumbnail = get_template_directory_uri(). '/assets/img/daitai_cat.jpg';
+               }
                // echo '<article class="front-section__article container">';
                echo '<div class="front-section__container--about container">';
-               echo '  <div class="front-section__container--about__img">'.get_the_post_thumbnail( $tax_post->ID , 'full' ).'</div>';
+               echo '  <div class="front-section__container--about__img">'.$custom_thumbnail.'</div>';
                if($current_post%2 != 0) {
                echo '  <article class="front-section__article--about columns is-mobile">';
                }else{
@@ -136,13 +142,16 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_2' ) ) {
                }
                echo '    <div class="front-section__article--about__contents is-title column">';
                echo '    <a class="front-section__article--about__link" href="'. get_permalink($tax_post->ID).'">';
-               echo '      <h3 class="front-section__article--about__title">'. get_the_title($tax_post->ID).'</h3>';
+               // echo '      <h3 class="front-section__article--about__title">'.$current_post.'</h3>';
+               //echo '      <h3 class="front-section__article--about__title">'. get_the_title($tax_post->ID).'</h3>';
                echo '    </a>';
                echo '    </div>';
                echo '    <div class="front-section__article--about__contents is-post column">';
                echo '    <a class="front-section__article--about__link" href="'. get_permalink($tax_post->ID).'">';
                echo '      <div class="front-section__article--about__post">';
-               echo        strip_shortcodes($custom_post->post_excerpt);
+               echo '      <h3 class="front-section__article--about__catchtitle">'.get_the_title($tax_post->ID).'</h3>';
+               // echo '      <h4 class="front-section__article--about__catchtitle">'.esc_html( get_post_meta($tax_post->ID, 'key_catch', true) ).'</h4>';
+               echo '      <p>' .$custom_excerpt. '</p>';
                echo '      </div>';
                echo '    </a>';
                echo '    </div>';
