@@ -38,6 +38,13 @@ function add_custom_fields(){
         'normal' //編集画面セクションが表示される部分
     );
     add_meta_box(
+        'catch', //編集画面セクションのHTML ID
+        'キャッチコピー', //編集画面セクションのタイトル、画面上に表示される
+        'insertCatch', //編集画面セクションにHTML出力する関数
+        'front', //投稿タイプ名
+        'normal' //編集画面セクションが表示される部分
+    );
+    add_meta_box(
         'post-sort-field', //編集画面セクションのHTML ID
         '投稿の順番を決める', //編集画面セクションのタイトル、画面上に表示される
         'insertPostSort', //編集画面セクションにHTML出力する関数
@@ -77,6 +84,48 @@ $date_mappings = array(
                       'key_value'        => 'OSMのコードを貼り付けます'
                       )
 );
+
+$key_catch = array();
+$key_catch = array(
+        'key_catch'  => array(
+                      'key_name'         => 'key_catch',
+                      'key_label'        => 'キャッチコピーを入力',
+                      'key_public_name'  => 'キャッチコピーを入力',
+                      'key_value'        => 'キャッチコピーを15文字程度で'
+                      )
+);
+// キャッチコピーを入力するカスタムフィールド
+function insertCatch() {
+  global $post;
+  global $key_catch;  
+
+  $keymaps = $key_catch;
+
+  foreach ($keymaps as $key => $val) {
+    echo '<label for="' .$key. '">' .$val['key_label']. '</label><br>';
+    echo '<input type="text" width="60" name="'.$key.'" value="' .esc_html( get_post_meta($post->ID, $key, true) ). '" placeholder="'. esc_html($val['key_value']) .'"><br>';
+    // echo '<input type="text" name="'.$val['key_name'].'" placeholder="'. esc_html($val['key_value']) .'"><br>';
+  }
+}
+
+// Mapのカスタムフィールドの保存（新規・更新・削除） 任意のラベルにmeta_keyを追加する
+add_action('save_post', 'save_catch_custom_fields');
+function save_catch_custom_fields( $post_id ) {
+  global $key_catch;
+  $keymaps = array();
+  $keymaps = $key_catch;
+  foreach ($keymaps as $keylabel => $val) {
+    $key_name = $val['key_name'];
+    if(isset($_POST[$key_name])) { // textに記入されているならば
+      $data = $_POST[$key_name];
+      if($data != get_post_meta($post_id, $key_name, true) ) {// すでに別の値を入力済みなら更新する
+        update_post_meta($post_id, $key_name , $data);
+      }
+    }else{
+        delete_post_meta($post_id, $key_name, get_post_meta($post_id, $key_name, true));
+    }
+  }
+}
 
 // 日時等を記載するカスタムフィールド
 function insertMetaData() {
