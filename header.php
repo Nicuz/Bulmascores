@@ -54,10 +54,10 @@
 							<div class="navbar-end">
 								<div class="navbar-item">
 									<div id="social-icons" class="field is-grouped">
-										<a class="navbar-item" href="#"><i class="fab fa-github"></i></a>
+										<!-- <a class="navbar-item" href="#"><i class="fab fa-github"></i></a> -->
 										<a class="navbar-item" href="#"><i class="fab fa-twitter"></i></a>
-										<a class="navbar-item" href="#"><i class="fab fa-linkedin"></i></a>
-										<a class="navbar-item" href="#"><i class="fab fa-youtube"></i></a>
+										<!-- <a class="navbar-item" href="#"><i class="fab fa-linkedin"></i></a> -->
+										<!-- <a class="navbar-item" href="#"><i class="fab fa-youtube"></i></a> -->
 									</div><!-- .field -->
 								</div><!-- .navbar-item -->
 							</div><!-- .navbar-end -->
