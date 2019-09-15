@@ -18,6 +18,22 @@ function bulmascores_customize_register( $wp_customize ) {
 	$wp_customize->remove_section( 'header_image' );
 	$wp_customize->remove_section( 'background_image' );
 
+	$wp_customize->add_section( 'origin_scheme',array(
+		'title'     => 'オリジナル項目',
+		'priority'  =>  200,
+	) );
+	$wp_customize->add_setting( 'top_hero_option_1',array(
+		'default'   =>  'MD参加ボタン',
+		'type'      =>  'option',
+		'transport' =>  'postMessage',
+	) );
+	$wp_customize->add_control( 'my_theme_top_hero_option',array(
+		'settings'  =>  'top_hero_option_1',
+		'label'     =>  'MD参加ボタンの項目',
+		'section'   =>  'origin_scheme',
+		'type'      =>  'text',
+	) );
+
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',

@@ -4,7 +4,9 @@
             <div class="hero-mdcenter container has-text-centered">
                 <h1 class="title is-1"><?php bloginfo('name'); ?></h1>
                 <h2 class="subtitle is-3"><?php bloginfo('description'); ?></h2>
-                <a class="button is-white is-outlined is-large is-rounded" href="//ingress.com/ja/events/">MD参加</a>
+                <a class="button is-white is-outlined is-large is-rounded" href="//ingress.com/ja/events/">
+                <?php echo get_option('top_hero_option_1') ?>
+                </a>
             </div>
         </div>
     </div>
