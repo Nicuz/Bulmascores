@@ -8,37 +8,31 @@
 */
 
 ?>
-<div class="column is-6">
+<div class="column is-4">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-		<header><!-- this is loop card -->
-			<?php the_title( '<h2 class="title is-marginless"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-
-			<?php if ( 'post' === get_post_type() ) : ?>
-				<div class="post-meta">
-					<p>
-						<?php esc_html_e( 'Last modified&nbsp;', 'bulmascores' )?><time><?php the_modified_date( 'j/m/Y' ); ?></time>
-						<?php esc_html_e( 'by&nbsp;', 'bulmascores' ) . the_author_posts_link();?>
-						<?php bulmascores_post_meta( 'categories' ); ?>
-					</p>
-				</div><!-- .post-meta -->
-			<?php endif; ?>
-		</header>
-
-		<?php
-			the_post_thumbnail( 'bulmascores_thumbnail', array(
-				//'class' => 'attachment-post-thumbnail my-custom-class',
-				'alt' => get_the_title(),
-				'title' => get_the_title(),
-			) ); ?>
-		<main>
-			<div class="post-content">
-				<?php the_excerpt(); ?>
-			</div><!-- .post-content -->
-		</main>
-		<footer>
-			<a href="<?php the_permalink(); ?>"><span class="button is-dark read-more"><?php esc_html_e( '続きを読む', 'bulmascores' ); ?></span></a>
-		</footer>
-		<hr>
-	</article><!-- #post-<?php the_ID(); ?> -->
+		<a href="<?php the_permalink(); ?>">
+			<div class="card">
+				<div class="card-image">
+					<figure class="image is-4by3">
+					<?php
+						the_post_thumbnail( 'bulmascores_thumbnail', array(
+							//'class' => 'attachment-post-thumbnail my-custom-class',
+							'alt' => get_the_title(),
+							'title' => get_the_title(),
+						) ); ?>
+					</figure>
+				</div> <!-- #card-image -->
+				<div class="card-content">
+					<main>
+						<div class="content">
+							<?php //the_title( '<h2 class="title is-marginless"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+							<?php the_title( '<h2 class="title is-marginless" rel="bookmark">', '</h2>' ); ?>
+							<?php the_excerpt(); ?>
+							<time datetime="<?php the_modified_date( 'j/m/Y' ); ?>"><?php the_modified_date( 'j/m/Y' ); ?></time>
+						</div>
+					</main>
+				</div> <!-- #card-content -->
+			</div> <!-- #card -->
+		</a>
+	</article><!-- #post-<?php //the_ID(); ?> -->
 </div>
