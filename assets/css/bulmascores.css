@@ -350,6 +350,14 @@ a img.aligncenter {
   transform: scale(1.1);
   transition-duration: 0.3s;
 }
+.front-section__content {
+  padding: 1rem 0;
+}
+@media screen and (min-width: 1024px) {
+  .front-section__content {
+    padding: 2rem 0;
+  }
+}
 .front-section__article--about {
   position: absolute;
   width: 100%;

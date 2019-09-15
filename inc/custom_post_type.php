@@ -288,7 +288,7 @@ if ( ! function_exists( 'bulma_get_archive_custom_posts' ) ) {
                echo '<article class="front-section__article container">';
                // echo '<h3 class="front-listItem"><a href="'. get_permalink($tax_post->ID).'">'. get_the_title($tax_post->ID).'</a></h3>';
                // $custom_post = get_post($tax_post->ID);
-               echo '<h3 class="title is-3 front-section__article__title">'. get_the_title($tax_post->ID).'</h3>';
+               echo '<h3 class="screen-reader-text">'. get_the_title($tax_post->ID).'</h3>';
                echo '<div class="columns">';
                echo   '<div class="column">';
                       bulma_map_meta_data($tax_post->ID);
