@@ -43,13 +43,16 @@ get_header(); ?>
 				<?php } ?>
 
 				<?php
-				if ( have_posts() ) :
-					/* Start the Loop */
-					while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/loops/loop', 'card' );
-					endwhile;
-
-				else :
+				if ( have_posts() ) : 
+					/* Start the Loop */ ?>
+					<div class="columns">
+					<?php while ( have_posts() ) : the_post();
+							get_template_part( 'template-parts/loops/loop', 'card' );
+					    	endwhile;
+                    ?>
+					</div>
+				
+				<?php else :
 					get_template_part( 'template-parts/contents/content', 'none' );
 
 				endif;
