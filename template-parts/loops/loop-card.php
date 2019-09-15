@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header>
+	<header><!-- this is loop card -->
 		<?php the_title( '<h2 class="title is-marginless"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
