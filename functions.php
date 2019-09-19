@@ -206,3 +206,13 @@ require get_template_directory() . '/inc/get-post.php';
 
 // HEXをRGB変換
 require get_template_directory() . '/inc/hex2rgb.php';
+
+// ナビにactiveクラスを付与
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'is-active ';
+    }
+    return $classes;
+}
