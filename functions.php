@@ -137,19 +137,19 @@ add_action( 'widgets_init', 'bulmascores_widgets_init' );
 
 // Enqueue scripts and styles.
 function bulmascores_scripts() {
-	$bulmacss = get_stylesheet_directory_uri().'/assets/css/bulma.css';
-	$bulmascores = get_stylesheet_directory_uri().'/assets/css/bulmascores.css';
+	$bulmacss = '/assets/css/bulma.css';
+	$bulmascores = '/assets/css/bulmascores.css';
 	// wp_enqueue_style( 'bulmascores-bulma-css', '//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css', array(), null );
 	wp_register_style( 'bulmascores-bulma-css', 
-					   $bulmacss, 
+					   get_template_directory_uri().$bulmacss, 
 					   array(),
-					   date("YsmdHi",filemtime($bulmacss) ), // 更新時間を追記してキャッシュしないようにする 
+					   date("YsmdHi",filemtime(get_template_directory().$bulmacss) ), // 更新時間を追記してキャッシュしないようにする 
 					   'all'
 				    );
 	wp_register_style( 'bulmascores-overrides-style', 
-						$bulmascores, 
+						get_template_directory_uri().$bulmascores, 
 						array(), 
-						date("YsmdHi",filemtime($bulmascores) ), // 更新時間を追記してキャッシュしないようにする 
+						date("YsmdHi",filemtime(get_template_directory().$bulmascores) ), // 更新時間を追記してキャッシュしないようにする 
 						'all' 
 					);
 	wp_enqueue_style( 'bulmascores-bulma-css' );
