@@ -262,7 +262,8 @@ a img.aligncenter {
   padding: .3rem 0;
 }
 .breadcrumbs-yugioh.is-dark {
-  background: #b86bff;
+  background: #645A92;
+  color: #dbdbdb;
 }
 .breadcrumb-yugioh {
   padding: .5rem .75rem;
