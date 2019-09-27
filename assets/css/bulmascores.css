@@ -504,3 +504,14 @@ a img.aligncenter {
     padding-top: 9rem;
   }
 }
+.hexclip {
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  background-image: linear-gradient(30deg, #fff 0, #fff 18%, transparent 18%, transparent 100%), linear-gradient(150deg, #fff 0, #fff 18%, transparent 18%, transparent 100%), linear-gradient(210deg, #fff 0, #fff 18%, transparent 18%, transparent 100%), linear-gradient(330deg, #fff 0, #fff 18%, transparent 18%, transparent 100%), linear-gradient(90deg, #fff 0, #fff 7%, transparent 7%, transparent 100%), linear-gradient(270deg, #fff 0, #fff 7%, transparent 7%, transparent 100%), radial-gradient(circle closest-side at 50% 50%, transparent 0, transparent 99%, #fff 99%, #fff 100%);
+}
+.hexclip img {
+  position: relative;
+  z-index: -1;
+  vertical-align: bottom;
+}
