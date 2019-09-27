@@ -1,6 +1,7 @@
 .hexclip {
   display: inline-block;
   position: relative;
+  object-fit: cover;
   line-height: 1;
   background-image:
     linear-gradient(
