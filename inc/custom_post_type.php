@@ -120,7 +120,7 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_3' ) ) {
           //echo      '<a href="'. $url_taxonomy .'">'. esc_html($taxonomy->name) .'</a>';
           echo    esc_html($taxonomy->name);
           echo    '</h2>';
-          echo    '<div class="front-section__content columns">';
+          echo    '<div class="front-section__content columns is-gapless">';
             foreach($tax_posts as $tax_post):
                $custom_post = get_post($tax_post->ID);
                $custom_excerpt = strip_shortcodes($custom_post->post_excerpt); 
