@@ -91,7 +91,7 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_3' ) ) {
         $url_taxonomy = get_term_link($taxonomy->slug, $taxonomy_name);
         $tax_get_array = array(
             'post_type' => $post_type, //表示したいカスタム投稿
-            'posts_per_page' => 5,//表示件数
+            'posts_per_page' => 3,//表示件数
             // https://blog.nakachon.com/2014/10/27/dont-use-name-field-tax-query-in-japanese/
             // termsにはidを, fieldにはterm_idを入れるべき
             'tax_query' => array(
@@ -130,7 +130,8 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_3' ) ) {
                 $custom_thumbnail = get_template_directory_uri(). '/assets/img/daitai_cat.jpg';
                }
                echo '<div class="front-section__container--about2 column">';
-               echo '  <div class="front-section__container--about2__img hexclip">'.$custom_thumbnail.'</div>';
+               //echo '  <div class="front-section__container--about2__img hexclip">'.$custom_thumbnail.'</div>';
+               echo '  <div class="front-section__container--about2__img">'.$custom_thumbnail.'</div>';
                echo '  <article class="front-section__article--about2 columns is-mobile">';
                echo '    <div class="front-section__article--about2__contents is-title column">';
                echo '    <a class="front-section__article--about2__link" href="'. get_permalink($tax_post->ID).'">';
