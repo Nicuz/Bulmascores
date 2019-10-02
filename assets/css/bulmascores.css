@@ -351,12 +351,99 @@ a img.aligncenter {
   transform: scale(1.1);
   transition-duration: 0.3s;
 }
+.front-section__container--about2 {
+  width: 100%;
+  position: relative;
+}
+.front-section__container--about2__img {
+  width: 100%;
+  overflow: hidden;
+}
+.front-section__container--about2__img img {
+  height: 100%;
+  object-fit: cover;
+  transition-duration: 0.3s;
+}
+.front-section__container--about2__img img:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+}
 .front-section__content {
   padding: 1rem 0;
 }
 @media screen and (min-width: 1024px) {
   .front-section__content {
     padding: 2rem 0;
+  }
+}
+.front-section__article--about2 {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.front-section__article--about2.is-reverse {
+  flex-direction: row-reverse;
+}
+.front-section__article--about2__contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  position: relative;
+}
+.front-section__article--about2__contents.is-title {
+  background: rgba(54, 54, 54, 0.1);
+}
+.front-section__article--about2__contents.is-post {
+  background: rgba(54, 54, 54, 0.95);
+}
+.front-section__article--about2__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 5px 5px 5px #7a7a7a;
+}
+@media screen and (min-width: 769px), print {
+  .front-section__article--about2__title {
+    font-size: 2rem;
+  }
+}
+.front-section__article--about2__post {
+  padding: .75rem;
+}
+.front-section__article--about2__post p {
+  color: #c9c9c9;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.front-section__article--about2__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.front-section__article--about2__catchtitle {
+  color: #ffdd57;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 769px), print {
+  .front-section__article--about2__catchtitle {
+    font-size: 2rem;
   }
 }
 .front-section__article--about {
