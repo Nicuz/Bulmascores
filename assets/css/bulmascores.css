@@ -386,24 +386,6 @@ a img.aligncenter {
   height: 100%;
   overflow: hidden;
 }
-.front-section__article--about2.is-reverse {
-  flex-direction: row-reverse;
-}
-.front-section__article--about2__contents {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 0;
-  position: relative;
-}
-.front-section__article--about2__contents.is-title {
-  background: rgba(54, 54, 54, 0.1);
-}
-.front-section__article--about2__contents.is-post {
-  background: rgba(54, 54, 54, 0.95);
-}
 .front-section__article--about2__title {
   font-size: 1.5rem;
   font-weight: 700;

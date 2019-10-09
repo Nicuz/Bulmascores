@@ -129,15 +129,15 @@ if ( ! function_exists( 'bulma_get_front_custom_posts_3' ) ) {
                }else{
                 $custom_thumbnail = get_template_directory_uri(). '/assets/img/daitai_cat.jpg';
                }
-               echo '<div class="front-section__container--about2 column">';
+               echo '<div class="front-section__container--about2">';
                //echo '  <div class="front-section__container--about2__img hexclip">'.$custom_thumbnail.'</div>';
                echo '  <div class="front-section__container--about2__img">'.$custom_thumbnail.'</div>';
-               echo '  <article class="front-section__article--about2 columns is-mobile">';
-               echo '    <div class="front-section__article--about2__contents is-title column">';
+               echo '  <article class="front-section__article--about2">';
+               echo '    <div class="front-section__article--about2__contents is-title">';
                echo '    <a class="front-section__article--about2__link" href="'. get_permalink($tax_post->ID).'">';
                echo '    </a>';
                echo '    </div>';
-               echo '    <div class="front-section__article--about2__contents is-post column">';
+               echo '    <div class="front-section__article--about2__contents is-post">';
                echo '    <a class="front-section__article--about2__link" href="'. get_permalink($tax_post->ID).'">';
                echo '      <div class="front-section__article--about2__post">';
                echo '      <h3 class="front-section__article--about2__catchtitle">'.get_the_title($tax_post->ID).'</h3>';
