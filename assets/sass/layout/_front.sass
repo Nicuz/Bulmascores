@@ -42,8 +42,8 @@ $heading-tri: 12px
                     max-height: 360px // ここはいいかげん
                     img
                         // width: 100%
-                        height: 100%
-                        max-height: 360px // ここはいいかげん
+                        max-height: 360px
+                        height: 360px
                         object-fit: cover
                         transition-duration: 0.3s
                         &:hover
@@ -54,6 +54,7 @@ $heading-tri: 12px
                 height: 200px
                 +tablet
                     height: 100%
+                margin-bottom: 0
                 padding: 0
                 position: relative
                 overflow: hidden
@@ -65,7 +66,7 @@ $heading-tri: 12px
                     overflow: hidden
                     img
                         //width: 100%
-                        height: 100%
+                        //height: 100%
                         object-fit: cover
                         transition-duration: 0.3s
                         &:hover
@@ -80,11 +81,11 @@ $heading-tri: 12px
             &--about2
                 position: absolute
                 width: 100%
+                height: 100%
                 top: 0
                 left: 0
                 margin: 0
                 padding: 0
-                height: 100%
                 overflow: hidden
                 background: rgba(0,0,0,.4)
                 &:hover
