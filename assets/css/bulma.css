@@ -8300,6 +8300,9 @@ a.panel-block:hover, label.panel-block:hover {
   flex-grow: 1;
   flex-shrink: 0;
 }
+.hero-body--2 {
+  padding: 3rem 1.5rem;
+}
 .section {
   padding: 3rem 1.5rem;
 }

@@ -34,7 +34,7 @@ while ($bulmascores_the_query->have_posts()):
     //Get post thumbnail URL
     $bulmascores_img_attributes = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'bulmascores_full');?>
 		<section style="background: linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0, 0.4)), url(<?php echo esc_url_raw($bulmascores_img_attributes[0]); ?>); background-size: cover; background-position: center center;" class="hero is-primary is-medium carousel-cell">
-			<div class="hero-body">
+			<div class="hero-body--2">
 				<div class="container has-text-centered">
 					<a href="<?php the_permalink();?>"><h1 class="hero-title title">
 						<?php the_title();?>
