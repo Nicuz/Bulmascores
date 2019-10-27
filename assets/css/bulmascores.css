@@ -593,6 +593,26 @@ a img.aligncenter {
     padding-top: 9rem;
   }
 }
+.hero--2 {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero--2 img {
+  object-fit: cover;
+  height: 200px;
+}
+@media screen and (min-width: 769px), print {
+  .hero--2 img {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero--2 img {
+    height: 100%;
+  }
+}
 .hexclip {
   display: inline-block;
   position: relative;

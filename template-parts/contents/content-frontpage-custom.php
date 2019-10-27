@@ -11,7 +11,7 @@
 <!-- front page template -->
 
 <?php // TOPのHERO
-	get_template_part( 'template-parts/contents/content', 'frontpage-hero' ); 
+	get_template_part( 'template-parts/contents/content', 'frontpage-hero--2' ); 
 ?>
 
 <?php if (function_exists('the_subtitle')): ?>
