@@ -31,10 +31,9 @@
 								$custom_logo_id = get_theme_mod('custom_logo');
 								// $custom_logo_attributes = wp_get_attachment_image_src($custom_logo_id);
 								echo wp_get_attachment_image($custom_logo_id,false,false,array('class'=>'custom-logo') );
-							?>
+							}?>
 								<h1><?php bloginfo('name');?></h1>
 							</a>
-							<?php }?>
 							<div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
 								<span></span>
 								<span></span>
