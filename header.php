@@ -25,18 +25,13 @@
 				<nav class="navbar is-dark">
 					<div class="container">
 						<div class="navbar-brand">
+							<a class="navbar-item" href="<?php echo esc_url_raw(home_url()); ?>">
 							<?php
-							if (has_custom_logo()) {?>
-							<div class="navbar-item">
-							<?php
-							the_custom_logo();
+							if (has_custom_logo()) {
+								$custom_logo_id = get_theme_mod('custom_logo');
+								// $custom_logo_attributes = wp_get_attachment_image_src($custom_logo_id);
+								echo wp_get_attachment_image($custom_logo_id,false,false,array('class'=>'custom-logo') );
 							?>
-							</div>
-							<a class="navbar-item" href="<?php echo esc_url_raw(home_url()); ?>">
-								<h1><?php bloginfo('name');?></h1>
-							</a>
-							<?php } else {?>
-							<a class="navbar-item" href="<?php echo esc_url_raw(home_url()); ?>">
 								<h1><?php bloginfo('name');?></h1>
 							</a>
 							<?php }?>
