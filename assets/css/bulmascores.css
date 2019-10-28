@@ -610,7 +610,7 @@ a img.aligncenter {
 }
 @media screen and (min-width: 1024px) {
   .hero--2 img {
-    height: 100%;
+    height: 360px;
   }
 }
 .hexclip {
