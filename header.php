@@ -26,9 +26,16 @@
 					<div class="container">
 						<div class="navbar-brand">
 							<?php
-							if (has_custom_logo()) {
+							if (has_custom_logo()) {?>
+							<div class="navbar-item">
+							<?php
 							the_custom_logo();
-							} else {?>
+							?>
+							</div>
+							<a class="navbar-item" href="<?php echo esc_url_raw(home_url()); ?>">
+								<h1><?php bloginfo('name');?></h1>
+							</a>
+							<?php } else {?>
 							<a class="navbar-item" href="<?php echo esc_url_raw(home_url()); ?>">
 								<h1><?php bloginfo('name');?></h1>
 							</a>
@@ -41,7 +48,8 @@
 						</div><!-- .navbar-brand -->
 
 						<div id="navbarExampleTransparentExample" class="navbar-menu">
-							<div class="navbar-start">
+							<!-- <div class="navbar-start"> -->
+							<div class="navbar-end">
 								<?php wp_nav_menu(array(
 								'theme_location' => 'menu-1', //change it according to your register_nav_menus() function
 								'depth'          => 2,
@@ -51,16 +59,16 @@
 								));
 								?>
 							</div>
-							<div class="navbar-end">
-								<div class="navbar-item">
-									<div id="social-icons" class="field is-grouped">
+							<!-- <div class="navbar-end"> -->
+								<!-- <div class="navbar-item"> -->
+									<!-- <div id="social-icons" class="field is-grouped"> -->
 										<!-- <a class="navbar-item" href="#"><i class="fab fa-github"></i></a> -->
-										<a class="navbar-item" href="#"><i class="fab fa-twitter"></i></a>
+										<!-- <a class="navbar-item" href="#"><i class="fab fa-twitter"></i></a> -->
 										<!-- <a class="navbar-item" href="#"><i class="fab fa-linkedin"></i></a> -->
 										<!-- <a class="navbar-item" href="#"><i class="fab fa-youtube"></i></a> -->
-									</div><!-- .field -->
-								</div><!-- .navbar-item -->
-							</div><!-- .navbar-end -->
+									<!-- </div>.field -->
+								<!-- </div>.navbar-item -->
+							<!-- </div>.navbar-end -->
 						</div>
 					</div><!-- .container -->
 				</nav>
