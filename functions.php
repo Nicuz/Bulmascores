@@ -72,8 +72,10 @@ if ( ! function_exists( 'bulmascores_setup' ) ) :
 		* @link https://codex.wordpress.org/Theme_Logo
 		*/
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			// 'height'      => 250,
+			// 'width'       => 250,
+			'height'      => 50,
+			'width'       => 50,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -89,6 +91,12 @@ if ( ! function_exists( 'bulmascores_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'bulmascores_setup' );
+
+// 投稿画面等に注釈を入れる
+function after_title_content() {
+  echo '<p style="background-color:orange; color:black;font-weight:bold">必須項目：タイトル名・抜粋・カテゴリー（カテゴリーは一つのみ選べます）</p><br><p style="background-color:yellow; color:black;font-weight:bold">推奨項目：本文・アイキャッチ</p>';
+}
+add_action( 'edit_form_after_title', 'after_title_content' );
 
 // Remove WordPress version number
 remove_action( 'wp_head', 'wp_generator' );
@@ -131,9 +139,25 @@ add_action( 'widgets_init', 'bulmascores_widgets_init' );
 
 // Enqueue scripts and styles.
 function bulmascores_scripts() {
-	wp_enqueue_style( 'bulmascores-bulma-css', '//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css', array(), null );
-	wp_enqueue_style( 'bulmascores-fontawesome', '//use.fontawesome.com/releases/v5.0.13/css/all.css', array(), null );
-	wp_enqueue_style( 'bulmascores-overrides-style', get_template_directory_uri() . '/assets/css/bulmascores.min.css', array(), null );
+	$bulmacss = '/assets/css/bulma.css';
+	$bulmascores = '/assets/css/bulmascores.css';
+	// wp_enqueue_style( 'bulmascores-bulma-css', '//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css', array(), null );
+	wp_register_style( 'bulmascores-bulma-css', 
+					   get_template_directory_uri().$bulmacss, 
+					   array(),
+					   date("YsmdHi",filemtime(get_template_directory().$bulmacss) ), // 更新時間を追記してキャッシュしないようにする 
+					   'all'
+				    );
+	wp_register_style( 'bulmascores-overrides-style', 
+						get_template_directory_uri().$bulmascores, 
+						array(), 
+						date("YsmdHi",filemtime(get_template_directory().$bulmascores) ), // 更新時間を追記してキャッシュしないようにする 
+						'all' 
+					);
+	wp_enqueue_style( 'bulmascores-bulma-css' );
+	wp_enqueue_style( 'bulmascores-fontawesome', '//use.fontawesome.com/releases/v5.10.2/css/all.css', array(), null );
+	wp_enqueue_style( 'bulmascores-overrides-style');
+	// wp_enqueue_style( 'bulmascores-overrides-style', get_template_directory_uri() . '/assets/css/bulmascores.min.css', array(), null );
 	wp_enqueue_script( 'bulmascores-burger-js', get_template_directory_uri() . '/assets/js/bulma_nav_burger.js', array(), null, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -168,4 +192,29 @@ require get_template_directory() . '/inc/customizer.php';
 // Load Jetpack compatibility file.
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
+}
+
+// パンくずリスト
+require get_template_directory() . '/inc/breadcrumb.php';
+
+// カスタム投稿タイプ 
+require get_template_directory() . '/inc/custom_post_type.php';
+
+// カスタムフィールド
+require get_template_directory() . '/inc/custom_fields.php';
+
+// 一般投稿の表示に関する制御
+require get_template_directory() . '/inc/get-post.php';
+
+// HEXをRGB変換
+require get_template_directory() . '/inc/hex2rgb.php';
+
+// ナビにactiveクラスを付与
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'is-active ';
+    }
+    return $classes;
 }

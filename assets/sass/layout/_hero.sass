@@ -1,0 +1,42 @@
+.hero    
+    &-title
+        font-size: $size-5
+        +tablet
+            font-size: $size-4
+        +desktop
+            font-size: $size-4
+    &-mdcenter
+        background: linear-gradient(30deg, rgba(0,210,180, 0.9),rgba(12,102,161, 0.9))
+        padding: 3rem 1.5rem
+        +desktop
+            padding-top: 9rem
+            padding-bottom: 9rem
+
+    &.is-medium
+        +tablet 
+            .hero-body--2
+                padding-bottom: 4.5rem
+                padding-top:    4.5rem
+    &.is-large
+        +tablet 
+            .hero-body--2
+                padding-bottom: 9rem
+                padding-top:    9rem
+    &--2
+        align-items: stretch
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        img
+
+            object-fit: cover
+            height: 200px
+            +tablet
+                height: 300px
+            +desktop
+                height: 360px
+// @media screen and (min-width: $desktop + 1)
+//     .hero    
+//         &-mdcenter
+//             padding-top: 9rem
+//             padding-bottom: 9rem

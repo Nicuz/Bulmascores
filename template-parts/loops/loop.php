@@ -31,13 +31,13 @@
 			'alt' => get_the_title(),
 			'title' => get_the_title(),
 		) ); ?>
-
-	<div class="post-content">
-		<?php the_excerpt(); ?>
-	</div><!-- .post-content -->
-
+    <main>
+	    <div class="post-content">
+		    <?php the_excerpt(); ?>
+	    </div><!-- .post-content -->
+    </main>
 	<footer>
-		<a href="<?php the_permalink(); ?>"><span class="button is-dark read-more"><?php esc_html_e( 'Read More', 'bulmascores' ); ?></span></a>
+		<a href="<?php the_permalink(); ?>"><span class="button is-dark read-more"><?php esc_html_e( '続きを読む', 'bulmascores' ); ?></span></a>
 	</footer>
 	<hr>
 </article><!-- #post-<?php the_ID(); ?> -->

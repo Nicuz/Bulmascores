@@ -9,10 +9,11 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area primary-content--single"> <!-- This is Single -->
 	<main id="main" class="container">
 
-		<div class="columns is-centered">
+		<div class="columns is-desktop">
+		<?php //<div class="columns is-centered"> ?>
 			<div class="column is-8">
 				<?php
 				while ( have_posts() ) : the_post();
@@ -28,6 +29,11 @@ get_header(); ?>
 				?>
 
 			</div><!-- .columns is-8 -->
+
+			<div class="column is-4">
+				<?php get_sidebar(); ?>
+			</div><!-- .columns is-4 -->
+
 		</div><!-- .columns -->
 
 	</main><!-- #main -->

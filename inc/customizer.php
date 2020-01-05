@@ -10,6 +10,10 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+
+// HEROの設定
+require get_template_directory() . '/inc/customizer-tophero.php';
+
 function bulmascores_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -17,6 +21,7 @@ function bulmascores_customize_register( $wp_customize ) {
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'header_image' );
 	$wp_customize->remove_section( 'background_image' );
+
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(

@@ -8,7 +8,7 @@
  */
 
 ?>
-
+<!-- front page template -->
 <?php if (function_exists('the_subtitle')): ?>
 
 <!-- Flickity Carousel -->

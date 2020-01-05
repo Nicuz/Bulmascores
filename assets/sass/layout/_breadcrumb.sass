@@ -1,0 +1,66 @@
+$breadcrumb-link-color: $white
+// Media queries breakpoints
+$mobile: 768px
+$tablet: 769px
+$desktop: 1024px
+$widescreen: 1216px
+$fullhd: 1408px
+
+// Smartphone and tablet
+.breadcrumbs-yugioh
+    &.is-dark
+        background: #645A92 //$purple//$grey-light
+        
+        // .breadcrumb
+        //     &::before
+        //         li+li
+        //             color: $grey-darker
+        color: $grey-lighter
+
+
+.breadcrumb-yugioh
+    $size-6: .85rem
+    padding: .5rem .75rem
+    font-size: $size-6
+
+    a
+        align-items: center
+        color: $breadcrumb-link-color
+        &:hover
+            color: darken($breadcrumb-link-color,15%)
+    
+    &__list
+        align-items: flex-start
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+    &__item
+        align-center
+        display: flex
+        &:first-child
+            a
+                padding-left: 0
+        &:is-active
+            a
+                cursor: default
+                pointer-events: none
+    li + li
+        margin: 0 .3rem
+
+        &::before
+            color: $breadcrumb-link-color
+            content: "\0002f"
+            margin-right: .3rem
+    
+    &__current
+        font-weight: $weight-semibold
+
+    // &__fahome
+    //     &::before
+    //         content: '\f015'
+    //         font-family: 'Font Awesome 5 Free'
+
+
+@media screen and (min-width: $desktop + 1)
+    .breadcrumb-yugioh
+        padding: .5rem 0

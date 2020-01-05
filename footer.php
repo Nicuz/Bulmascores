@@ -15,7 +15,7 @@
 	<div class="container">
 		<?php
 		/* translators: 1: Theme name, 2: Theme author. */
-		printf( esc_html__( 'Theme: %1$s by %2$s.', 'bulmascores' ), 'bulmascores', '<a href="https://github.com/Nicuz" target="_blank">Domenico Majorana</a>' );
+		printf( esc_html__( 'Theme: %1$s by %2$s.', 'bulmascores custom' ), 'bulmascores', '<a href="https://github.com/Nicuz" target="_blank">Yugioh Hack</a>' );
 		?>
 	</div><!-- .container -->
 </footer><!-- #site-footer -->

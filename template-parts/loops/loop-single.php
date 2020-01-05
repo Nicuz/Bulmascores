@@ -11,19 +11,37 @@
 
 <article id="post-<?php the_ID();?>" <?php post_class();?>>
 
-	<?php bulmascores_post_meta('categories');?>
+	<?php // bulmascores_post_meta('categories');?>
+	<header class="single-post-header">
+		<div class="single-post-content">
+			<?php // the_title('<h1 class="title is-1 single-post-title">', '</h1>');?>
+			<?php the_title('<h1 class="title is-1 single-post-title">', '</h1>');?>
+			<?php if (function_exists('the_subtitle')): ?>
+			<?php the_subtitle('<h2 class="subtitle">', '</h2>');?>
+			<?php endif;?>
 
-	<header class="post-header">
-		<?php the_title('<h1 class="title is-1">', '</h1>');?>
-		<?php if (function_exists('the_subtitle')): ?>
-		<?php the_subtitle('<h2 class="subtitle">', '</h2>');?>
-		<?php endif;?>
-
+			<?php 
+				if (has_post_thumbnail() ) {
+					the_post_thumbnail('bulmascores_thumbnail', 
+						array(
+							//'class' => 'attachment-post-thumbnail my-custom-class',
+							'class' => 'single-post-thumbnail',
+							'alt'   => get_the_title(),
+							'title' => get_the_title(),
+						)
+					);
+				}else{
+					$image_url = get_template_directory_uri(). '/assets/img/daitai_cat.jpg';
+					echo '<img src='. $image_url. '>';
+				}
+			?>
+		</div>
+		
 		<?php if ('post' === get_post_type()): ?>
-			<div class="post-meta">
+			<div class="post-meta signle-post-meta">
 				<p>
-					<?php esc_html_e('Last modified&nbsp;', 'bulmascores')?><time><?php the_modified_date('j/m/Y');?></time>
-					<?php esc_html_e('by&nbsp;', 'bulmascores') . the_author_posts_link();?>
+					<?php esc_html_e('更新： ', 'bulmascores')?><time><?php the_modified_date('Y/m/j');?></time>
+					<?php // esc_html_e('by&nbsp;', 'bulmascores') . the_author_posts_link();?>
 				</p>
 			</div><!-- .post-meta -->
 			<?php
@@ -31,12 +49,6 @@ endif;?>
 
 		</header><!-- .post-header -->
 
-		<?php the_post_thumbnail('bulmascores_thumbnail', array(
-    //'class' => 'attachment-post-thumbnail my-custom-class',
-    'alt'   => get_the_title(),
-    'title' => get_the_title(),
-)
-);?>
 
 		<div class="content">
 			<?php

@@ -1,0 +1,220 @@
+$front-dl-lineheight: 2.5
+$front-dl-gap: .55rem
+$front-dl-gap-bottom: .25rem
+$heading-tri: 12px
+
+.front
+    &-section
+        margin-bottom: 2.4rem
+        &__link--about
+            // position: absolute
+            // width: 100%
+            // height: 100%
+            // top: 0
+            // left: 0
+        &__heading
+            background: $grey-darker
+            color: $white
+            text-align: center
+            padding: $gap/2 0
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                right: 0
+                bottom: -($heading-tri)
+                left: 0
+                width: 0px
+                height: 0px
+                margin: auto
+                border-style: solid
+                border-color: $grey-darker transparent transparent transparent 
+                border-width: $heading-tri $heading-tri 0 $heading-tri
+        &__container
+            &--about
+                width: 100%
+                position: relative
+                max-height: 360px // ここはいいかげん
+                overflow: hidden
+                &__img
+                    width: 100%
+                    // height: 100%
+                    max-height: 360px // ここはいいかげん
+                    img
+                        // width: 100%
+                        max-height: 360px
+                        height: 360px
+                        object-fit: cover
+                        transition-duration: 0.3s
+                        &:hover
+                            transform: scale(1.1)      //画像の拡大率
+                            transition-duration: 0.3s  //変化に掛かる時間
+            &--about2
+                width: 100%
+                height: 200px
+                +tablet
+                    height: 100%
+                margin-bottom: 0
+                padding: 0
+                position: relative
+                overflow: hidden
+                &__img
+                    width: 100%
+                    height: 200px
+                    +tablet
+                        height: 100%
+                    overflow: hidden
+                    img
+                        //width: 100%
+                        //height: 100%
+                        object-fit: cover
+                        transition-duration: 0.3s
+                        &:hover
+                            transform: scale(1.1)      //画像の拡大率
+                            transition-duration: 0.3s  //変化に掛かる時間
+        &__content
+            padding: 1rem 0
+            +desktop
+                padding: 2rem 0
+
+        &__article
+            &--about2
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                margin: 0
+                padding: 0
+                overflow: hidden
+                background: rgba(0,0,0,.4)
+                &:hover
+                    transform: scale(1.08)      //画像の拡大率
+                    transition-duration: 0.3s  //変化に掛かる時間
+                    background: rgba(0,0,0,.6)
+                &__contents
+                    //display: flex
+                    //flex-direction: column
+                    //justify-content: center
+                    //align-items: center
+                    //flex-wrap: wrap
+                    //margin-bottom: 0
+                    //position: relative
+                    +desktop
+                    &.is-title
+                        //background: rgba($grey-darker,.1)
+                    &.is-post
+                        //background: rgba($grey-darker,.95)
+                &__title
+                    // margin: auto 0
+                    font-size: $size-4
+                    +tablet
+                        font-size: $size-3
+                    font-weight: $weight-bold
+                    color: $white
+                    text-shadow: 5px 5px 5px $grey
+                &__post
+                    padding: .75rem *2
+                    p
+                        color: invert($grey-darker)
+                        font-weight: $weight-semibold
+                        line-height: 1.2
+                &__link
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    align-items: center
+                    flex-wrap: wrap
+                    margin-bottom: 0
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    top: 0
+                    left: 0
+                &__catchtitle
+                    color: $yellow
+                    font-weight: $weight-bold
+                    font-size: $size-3
+                    +tablet
+                        font-size: $size-3
+            &--about
+                position: absolute
+                width: 100%
+                top: 0
+                left: 0
+                margin: 0
+                padding: 0
+                height: 100%
+                overflow: hidden
+                &.is-reverse
+                    flex-direction: row-reverse
+                &__contents
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    align-items: center
+                    flex-wrap: wrap
+                    margin-bottom: 0
+                    position: relative
+                    +desktop
+                    &.is-title
+                        background: rgba($grey-darker,.1)
+                    &.is-post
+                        background: rgba($grey-darker,.95)
+                &__title
+                    // margin: auto 0
+                    font-size: $size-4
+                    +tablet
+                        font-size: $size-3
+                    font-weight: $weight-bold
+                    color: $white
+                    text-shadow: 5px 5px 5px $grey
+                &__post
+                    padding: .75rem
+                    p
+                        color: invert($grey-darker)
+                        font-weight: $weight-semibold
+                        line-height: 1.2
+                &__link
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    align-items: center
+                    flex-wrap: wrap
+                    margin-bottom: 0
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    top: 0
+                    left: 0
+                &__catchtitle
+                    color: $yellow
+                    font-weight: $weight-bold
+                    font-size: $size-4
+                    +tablet
+                        font-size: $size-3
+    
+    &-map
+        &--meta
+            display: flex
+            flex-wrap: wrap
+            // line-height: $front-dl-lineheight
+            &__dt
+                font-weight: bold
+                width: 25%
+                border-bottom: 2px solid $grey-darker
+                padding-right: $front-dl-gap
+                margin-bottom: $front-dl-gap
+                padding-top:   $front-dl-gap
+                padding-bottom: $front-dl-gap-bottom
+                text-align: end
+            &__dd
+                margin-left: auto
+                font-weight: 700
+                width: 75%
+                padding-right: $front-dl-gap
+                margin-bottom: $front-dl-gap
+                padding-top:   $front-dl-gap
+                padding-left: $front-dl-gap
+                padding-bottom: $front-dl-gap-bottom
+                border-bottom: 2px solid $grey-light
