@@ -4,9 +4,14 @@ body, button, input, select, textarea {
   font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
 }
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 a, a:hover {
   color: #000;
@@ -81,7 +86,8 @@ a img.aligncenter {
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -94,7 +100,8 @@ a img.aligncenter {
 .screen-reader-text:focus {
   background-color: #eee;
   clip: auto !important;
-  clip-path: none;
+  -webkit-clip-path: none;
+          clip-path: none;
   color: #444;
   display: block;
   font-size: 1em;
@@ -147,7 +154,9 @@ a img.aligncenter {
 /* main: ../bulmascores.sass */
 @media screen and (max-width: 1023px) {
   .carousel-cell .hero-body {
-    flex-grow: 0;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
     margin: auto;
   }
   .columns {
@@ -158,7 +167,8 @@ a img.aligncenter {
 }
 /* main: ../bulmascores.sass */
 .navbar {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 .custom-logo {
   width: 35px;
@@ -221,8 +231,12 @@ a img.aligncenter {
   margin-bottom: 10px;
 }
 #comments .comment-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #comments .avatar, #comments .fn {
   margin-right: 5px;
@@ -270,19 +284,30 @@ a img.aligncenter {
   font-size: 0.85rem;
 }
 .breadcrumb-yugioh a {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
 }
 .breadcrumb-yugioh a:hover {
   color: #d9d9d9;
 }
 .breadcrumb-yugioh__list {
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 .breadcrumb-yugioh__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .breadcrumb-yugioh__item:first-child a {
@@ -344,12 +369,16 @@ a img.aligncenter {
 .front-section__container--about__img img {
   max-height: 360px;
   height: 360px;
-  object-fit: cover;
-  transition-duration: 0.3s;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 .front-section__container--about__img img:hover {
-  transform: scale(1.1);
-  transition-duration: 0.3s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 .front-section__container--about2 {
   width: 100%;
@@ -375,12 +404,16 @@ a img.aligncenter {
   }
 }
 .front-section__container--about2__img img {
-  object-fit: cover;
-  transition-duration: 0.3s;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 .front-section__container--about2__img img:hover {
-  transform: scale(1.1);
-  transition-duration: 0.3s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 .front-section__content {
   padding: 1rem 0;
@@ -402,8 +435,10 @@ a img.aligncenter {
   background: rgba(0, 0, 0, 0.4);
 }
 .front-section__article--about2:hover {
-  transform: scale(1.08);
-  transition-duration: 0.3s;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
   background: rgba(0, 0, 0, 0.6);
 }
 .front-section__article--about2__title {
@@ -426,11 +461,21 @@ a img.aligncenter {
   line-height: 1.2;
 }
 .front-section__article--about2__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 0;
   position: absolute;
   width: 100%;
@@ -459,14 +504,27 @@ a img.aligncenter {
   overflow: hidden;
 }
 .front-section__article--about.is-reverse {
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 .front-section__article--about__contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 0;
   position: relative;
 }
@@ -496,11 +554,21 @@ a img.aligncenter {
   line-height: 1.2;
 }
 .front-section__article--about__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 0;
   position: absolute;
   width: 100%;
@@ -519,8 +587,11 @@ a img.aligncenter {
   }
 }
 .front-map--meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .front-map--meta__dt {
   font-weight: bold;
@@ -544,7 +615,9 @@ a img.aligncenter {
   border-bottom: 2px solid #b5b5b5;
 }
 .primary-content {
-  flex: 1 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 .primary-content--front {
   margin-top: 0px;
@@ -594,13 +667,23 @@ a img.aligncenter {
   }
 }
 .hero--2 {
-  align-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .hero--2 img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 200px;
 }
 @media screen and (min-width: 769px), print {
@@ -616,7 +699,8 @@ a img.aligncenter {
 .hexclip {
   display: inline-block;
   position: relative;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   line-height: 1;
   background-image: linear-gradient(30deg, #fff 0, #fff 18%, transparent 18%, transparent 100%), linear-gradient(150deg, #fff 0, #fff 18%, transparent 18%, transparent 100%), linear-gradient(210deg, #fff 0, #fff 18%, transparent 18%, transparent 100%), linear-gradient(330deg, #fff 0, #fff 18%, transparent 18%, transparent 100%), linear-gradient(90deg, #fff 0, #fff 7%, transparent 7%, transparent 100%), linear-gradient(270deg, #fff 0, #fff 7%, transparent 7%, transparent 100%), radial-gradient(circle closest-side at 50% 50%, transparent 0, transparent 99%, #fff 99%, #fff 100%);
 }
