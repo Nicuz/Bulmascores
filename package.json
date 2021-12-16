@@ -5,7 +5,7 @@
   "scripts": {
     "clean:css": "rimraf ./assets/css/",
     "compile:sass": "node-sass --output-style expanded ./assets/sass/bulmascores.sass -o ./assets/css",
-    "compile:bulma": "node-sass --output-style expanded ./assets/sass/bulma/bulma.sass -o ./assets/css",
+    "compile:bulma": "node-sass --output-style expanded ./assets/sass/bulma.sass -o ./assets/css",
     "compile:postcss": "postcss -c postcss.config.js ./assets/css/*.css -r ./assets/css/",
     "compile:css": "npm-run-all clean:css compile:sass compile:postcss",
     "build:css": "onchange \"./assets/sass/\" -- npm-run-all clean:css compile:sass compile:bulma compile:postcss ",
@@ -54,7 +54,5 @@
     "rimraf": "^3.0.2",
     "sanitize.css": "^13.0.0",
     "watch": "^1.0.2"
-  },
-  "dependencies": {},
-  "optionalDependencies": {}
+  }
 }
